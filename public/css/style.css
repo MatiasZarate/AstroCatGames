@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&family=VT323&display=swap');
+*{
+    box-sizing: border-box;
+    /*font-family: 'courier', cursive; elegante y */
+    /*font-family: 'Press Start 2P', cursive; no está mal para un titulo o una sección supongo*/
+    /*font-family: 'VT323', monospace; lo mismo pero más chiquito*/
+    font-family: 'Orbitron', sans-serif; /*ta buenaaaa*/
+    /*solución a bordes (para futuros proyectos ;v )*/
+    margin: 0;
+    padding: 0;
+}
+.body{
+    /*background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1750548057/Central_Loquendo_City_cygssa.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;*/
+    background-color: grey; 
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    /*background-size:cover;*/
+    /*display: flex;
+    align-items: center;
+    flex-direction: column;*/
+    /*height: 96vh;
+    width: 96vh;*/
+}
+/*.cajaBorrar{
+    border: solid 5px black;
+    color:black;
+    background-color: silver;
+    width: 80%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*header*/
+.header{
+    /*background-color: green;*/
+    color:gray;
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835600/81kTrSqMuLL_l0k3gl.jpg");
+    border: solid 5px black;
+    height: 75px;
+    /*width: 75%85;*/
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;
+    justify-content: space-around;
+}
+.fixed{
+    position:fixed;
+    width:100%;
+    z-index: 10;
+}
+.logo{
+    width: 20%;
+}
+.titulo{
+    /*width: 25%;*/
+    margin-right: 25%;
+}
+.user{
+    display: flex;
+    justify-content:space-around;
+    margin-left: 15px;
+}
+.iniciosesion{
+    width: /*185*/200px;
+    border: solid 5px black;
+    margin-right: 5px;
+    font-size: 25px;
+}
+.registro{
+    width: 170px;
+    border: solid 5px black;
+    font-size: 25px;
+}
+/*columna */
+.extra1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.column{
+    background-color: purple;   
+    /*background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835559/image-1689504354-3016_v4aytd.jpg");*/
+    /*border-bottom: solid 5px black;*/
+    /*border-right: solid 5px black;
+    border-left: solid 5px black;*/
+   /* height: 85vh;
+    width: 12%;*/
+    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;
+    flex-direction: row;*/
+    height: 40px;
+    /*width: 1350px /*1030px*/;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;
+    justify-content: space-around;
+}
+.funcionalidad{
+    color: white;
+    background-color: /*rgb(151, 150, 150)*/grey;
+    border-bottom: solid 2px black;
+    /*margin-left:250px;*/
+    cursor: pointer;
+    height: 40px;
+}
+.funcionalidad:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+/*body principal*/
+.body2{
+    width: 1140px; 
+    /*height: 85vh;*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.imagenCentral{
+    width: 450px;
+    height: 350px;
+}
+.categorias{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    /*border: solid 5px white;*/
+    flex-direction: column;
+}
+.botones{
+    /*display: flex;*/
+    flex-direction: row;
+    justify-content: space-around;
+}
+.btn1, .btn2, .btn3, .btn4, .btn5{
+    width: 150px;
+    height: 35px;
+    margin: 15px;
+    /*background-color: rgb(248, 208, 4);*/
+    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
+    cursor: pointer;
+}
+.btn1:hover, .btn2:hover, .btn3:hover, .btn4:hover, .btn5:hover{
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.cuadradote{
+    background-color: white;
+    border: solid 5px black;
+    margin-left: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 300px;
+}
+.productos1{
+    background-color: black;
+    width: 1350px; /*8594100%*/;
+    color: purple;
+
+}
+.tituloProducto{
+    margin-left: 550px;
+}
+.productos2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-right: 10px;
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835576/A-colorful-galaxy-with-bright-multi-hued-stars-and-cosmic-dust-showcasing-the-beauty-of-the-universe-in-vivid-detail_fi1daw.jpg") ;
+}
+/*carrusel barato*/
+ 
+  .carousel-slidee {
+    flex: 1 0 20%;
+    aspect-ratio: 1;
+    flex-flow: column nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bae;
+    scroll-snap-align: center;
+  }
+  .carousel-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-block: 16px;/*16px 32px;si borro desaparece*/
+    /*margin: 16px 32px;*/
+    overflow-x:auto;
+    scroll-snap-type: x mandatory;
+    gap: 30px;
+    align-items:center;
+  }
+  
+/*carrusel grande bootstrap*/
+.carruselBoteTrapo{
+    width: /*870*/950px;
+    height: 410px;
+    border: solid 5px black;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: black;
+}
+.carousel-item{
+    width: 750px !important;
+    height: 400px;
+    margin-left: 100px;
+}
+.carousel-control-next, .carousel-control-prev{
+    background-color:black;
+    /*ponerle fondo de galaxia o algo así, que no quede como etiquetado de exceso de azucar*/
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1736259614/ca08cff753ccdc0c5666300bfb821fce_m73w1d.jpg") !important;
+    width: 90px !important;
+}
+.sr-only{
+    color: white;
+}
+/*carrusel pequeño bootstrap*/ /*se ve horrible pero caaalma, voy a hacer que se vea bien */
+.productos3{
+    background-color: black;
+    width: 1350px; 
+    color: #800080;
+}
+.productos4{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-right: 10px;
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835576/A-colorful-galaxy-with-bright-multi-hued-stars-and-cosmic-dust-showcasing-the-beauty-of-the-universe-in-vivid-detail_fi1daw.jpg") ;
+}
+.carousel-alargatexfa{
+    width: 1350px;
+}
+.cuadradote2{
+    background-color: white;
+    border: solid 5px black;
+    margin-left: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 300px !important;
+    width: 300px !important;
+    overflow-x:auto;
+    scroll-snap-type: x mandatory;
+}
+.carousel-itemm{
+    width: 1150px;
+    margin-top: 25px;
+}
+/*.carousel-item {
+  transition: none !important;
+}
+/*yesss ahora lo unico que queda ver es porque hay una animación de superposición al dar next o prev*/

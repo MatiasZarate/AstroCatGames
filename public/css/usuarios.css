@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&family=VT323&display=swap');
+*{
+    box-sizing: border-box;
+    /*font-family: 'courier', cursive; elegante y */
+    /*font-family: 'Press Start 2P', cursive; no está mal para un titulo o una sección supongo*/
+    /*font-family: 'VT323', monospace; lo mismo pero más chiquito*/
+    font-family: 'Orbitron', sans-serif; /*ta buenaaaa*/
+    /*solución a bordes (para futuros proyectos ;v )*/
+    margin: 0;
+    padding: 0;
+}
+.body{
+    /*background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1750548057/Central_Loquendo_City_cygssa.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;*/
+    background-color: grey; 
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    /*background-size:cover;*/
+    /*display: flex;
+    align-items: center;
+    flex-direction: column;*/
+    /*height: 96vh;
+    width: 96vh;*/
+}
+/*
+/*header*/
+.header{
+    /*background-color: green;*/
+    color:gray;
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835600/81kTrSqMuLL_l0k3gl.jpg");
+    border: solid 5px black;
+    height: 75px;
+    /*width: 75%85;*/
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;
+    justify-content: space-around;
+}
+.fixed{
+    position:fixed;
+    width:100%;
+    z-index: 10;
+}
+.logo{
+    width: 20%;
+}
+.titulo{
+    /*width: 25%;*/
+    margin-right: 25%;
+}
+.user{
+    display: flex;
+    justify-content:space-around;
+    margin-left: 15px;
+}
+.iniciosesion{
+    width: /*185*/200px;
+    border: solid 5px black;
+    margin-right: 5px;
+    font-size: 25px;
+}
+.registro{
+    width: 170px;
+    border: solid 5px black;
+    font-size: 25px;
+}
+/*columna */
+.extra1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.column{
+    background-color: purple;   
+    /*background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835559/image-1689504354-3016_v4aytd.jpg");*/
+    /*border-bottom: solid 5px black;*/
+    /*border-right: solid 5px black;
+    border-left: solid 5px black;*/
+   /* height: 85vh;
+    width: 12%;*/
+    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;
+    flex-direction: row;*/
+    height: 40px;
+    /*width: 1350px /*1030px*/;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;
+    justify-content: space-around;
+}
+.funcionalidad{
+    color: white;
+    background-color: /*rgb(151, 150, 150)*/grey;
+    border-bottom: solid 2px black;
+    /*margin-left:250px;*/
+    cursor: pointer;
+    height: 40px;
+}
+.funcionalidad:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+/*body principal*/
+.body2{
+    width: 1140px; 
+    /*height: 85vh;*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.cajaBorrar{
+    border: solid 5px black;
+    color:black;
+    background-color: silver;
+    width: 80%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
