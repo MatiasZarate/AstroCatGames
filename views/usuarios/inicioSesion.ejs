@@ -6,19 +6,18 @@
      <link rel="stylesheet" href="../../css/usuarios.css" >
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
-<body class="body">
-
-         <div class="extra1"> <div class="fixed"> 
-    <div class="header"> <h1 class="logo"> LOGO </h1> <h1 class="titulo"> NOMBRE </h1> <div class="user">  <h2 class="iniciosesion">iniciar sesión</h2><h2 class="registro">registrarse</h2></div></div>
-      <div class="column">
-     <h2 class="funcionalidad"> carrito(0) </h2>
-     <h2 class="funcionalidad"> lista de deseados</h2>
-     <h2 class="funcionalidad"> mi perfil </h2>
-    </div></div> <br><br><br><br><br><br>
+<body class="body"><div class="extra1"> 
+         <%- include("../partials/header") %>
+         
     <div class="body2"><div class="cajaBorrar"> 
-    <h1>inicio de Sesión</h1>
+    <h1>Inicio de sesión</h1><br><br>
+    <form action="/" method="POST" id="formularioSesion" class="formularioSesion">
+    <input type="text" placeholder="nombre de usuario" id="nombre" class="input"><br><br>
+    <input type="password" placeholder="contraseña" id="contraseña" class="input"><br><br>
+    <button class="buto">iniciar sesión</button></form>
+
     </div>
-    
+    <%- include("../partials/footer") %>
     </div></div>
-</body>
+   </div> </body>
 </html>

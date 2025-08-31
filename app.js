@@ -12,8 +12,29 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-app.use(express.urlencoded({extended:false}));
+
+const multer = require("multer");
+/*const path = require("path");*/
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/"); // carpeta donde guardar temporalmente
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({ storage });
+
+// hacerlo accesible en todas las rutas
+app.use((req, res, next) => {
+  req.upload = upload;
+  next();
+});
+
 
 app.use("/", routes);
 

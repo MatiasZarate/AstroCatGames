@@ -9,16 +9,11 @@
     </head>
 <body class="body">
         <div class="cajaBorrar"> 
-        <div class="extra1"> <div class="fixed"> 
-    <div class="header"> <h1 class="logo"> LOGO </h1> <h1 class="titulo"> NOMBRE </h1> <div class="user">  <h2 class="iniciosesion"> <a href="/usuarios/inicioSesion">iniciar sesión</a></h2><h2 class="registro"><a href="/usuarios/registro">registrarse</a></h2></div></div>
-      <div class="column">
-     <h2 class="funcionalidad"> lista de deseados</h2>
-     <h2 class="funcionalidad"> carrito(0) </h2>
-     <h2 class="funcionalidad"> <a href="/usuarios/listaUsuarios"> lista de usuarios </a>  </h2>
-    </div></div> <br><br><br><br><br><br>
-    <div class="body2"> 
+        <div class="extra1"> 
 
-<h1> CONSIGUE DE LO MEJOR EN **</h1>
+        <%- include("partials/header") %> <br><br>
+    <div class="body2"> 
+<h1> Consigue lo mejor en ASTRO CAT GAMES</h1>
 <div class="carruselBoteTrapo"> 
 <div id="carouselOne" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -41,9 +36,9 @@
   </button>
 </div>
 </div>
-<br><br>
+<br>
         
-<h1> ¿Que es **?</h1> <button class="btn1">Respuesta</button>
+
 <br><div class="categorias"> <h1> Categorias </h1> 
     <div class="botones"> <button class="btn1"> <a href="/"> videojuegos  </a> </button><button class="btn2"> consolas </button><button class="btn3"> accesorios </button><button class="btn4"> merch </button><button class="btn5"> tarjetas código </button> </div> </div>
      
@@ -186,7 +181,8 @@
     <span class="sr-only">Next</span>
 </button>
 </div></div></div>
-
+<br>
+  <%- include("partials/footer") %>
 </div></div></div>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>

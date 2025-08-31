@@ -18,6 +18,8 @@
     display:flex;
     align-items: center;
     justify-content: center;
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg");
+    background-position: center;
     /*background-size:cover;*/
     /*display: flex;
     align-items: center;
@@ -26,46 +28,6 @@
     width: 96vh;*/
 }
 /*
-/*header*/
-.header{
-    /*background-color: green;*/
-    color:gray;
-    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835600/81kTrSqMuLL_l0k3gl.jpg");
-    border: solid 5px black;
-    height: 75px;
-    /*width: 75%85;*/
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    display: flex;
-    justify-content: space-around;
-}
-.fixed{
-    position:fixed;
-    width:100%;
-    z-index: 10;
-}
-.logo{
-    width: 20%;
-}
-.titulo{
-    /*width: 25%;*/
-    margin-right: 25%;
-}
-.user{
-    display: flex;
-    justify-content:space-around;
-    margin-left: 15px;
-}
-.iniciosesion{
-    width: /*185*/200px;
-    border: solid 5px black;
-    margin-right: 5px;
-    font-size: 25px;
-}
-.registro{
-    width: 170px;
-    border: solid 5px black;
-    font-size: 25px;
-}
 /*columna */
 .extra1{
     display: flex;
@@ -113,9 +75,66 @@
     border: solid 5px black;
     color:black;
     background-color: silver;
-    width: 80%; 
+    width: 100%; 
+    height:/*353*/ /*370*/ 390px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 50px;
+    box-sizing: content-box;
+    
+    
+    /*display: inline-block;*/
+}
+.cajaBorrar2{
+    border: solid 5px black;
+    color:black;
+    background-color: silver;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.cuadradote{
+    background-color: /*white*/silver;
+    border: solid 5px black;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 300px;
+    width: 250px;
+    font-size: small;
+}
+.wrapeate{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.formularioRegistro{
+    margin-left:170px;
+}
+.fotoDePerfil{
+    width:225px;
+    height: 200px;
+    padding:0px;
+}
+.bonot{
+    width: 50px;
+    height: 30px;
+    margin: 2px;
+}
+.dosFuncionalidades{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin-left: 5px;
+}
+.errores{
+    margin-left:170px;
 }
