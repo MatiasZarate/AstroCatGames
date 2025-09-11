@@ -16,6 +16,17 @@ const validateRegister = [
     check("email").notEmpty() .withMessage("debes completar el campo con un email"),
     check("edad").notEmpty().withMessage("debes completar el campo edad")
 ];
+const validateRegister2 = [
+    check("nombre")
+    .notEmpty().withMessage("debes completar el nombre del producto")
+    .isLength({min:3, max:20}).withMessage("no debe tener menos de 3 o más de 20 caracteres"),
+    check("descripcion").notEmpty().withMessage("debes completar la descripción"),
+    check("precio").notEmpty() .withMessage("debes completar el campo de precio"),
+    check("cantidad").notEmpty()
+    .isLength({min:1}).withMessage("no puede ser menor de 1"),
+    /*check("imagen").notEmpty().withMessage("debes subir una imagen"),*/
+    check("categoria").notEmpty().withMessage("debes seleccionar una categoria")
+];
 
 const uploadFile = multer();
  
@@ -28,5 +39,8 @@ router.get("/usuarios/registro", homeController.registro);
 router.post("/usuarios/registro", upload.single('imagen'), validateRegister, homeController.postregistro);
 router.get("/usuarios/editar/:id", homeController.editar);
 router.put("/usuarios/editar/:id", upload.single("imagen"), homeController.editar2);
+router.get("/productos/creaProducto", homeController.creaProducto);
+router.post("/productos/creaProducto", upload.single('imagen'), validateRegister2, homeController.postCreaProducto);
+router.get("/productos/detalleProducto/:id", homeController.detalleProducto);
 
 module.exports = router; 

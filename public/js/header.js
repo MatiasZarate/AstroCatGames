@@ -3,6 +3,7 @@ window.addEventListener("load", function(){
     let inicioSesion = document.getElementById("inicioSesion")
     let registro = document.getElementById("registro")
     let lsitaUsuarios = document.getElementById("listaUsuarios")
+    let creaProducto = document.getElementById("creaProducto")
 
     logo.addEventListener("click", function(){
        /* alert("me an tocao");*/
@@ -19,5 +20,8 @@ window.addEventListener("load", function(){
     lsitaUsuarios.addEventListener("click", function(){
         /*alert("me an tocao");*/
         window.location.href = "/usuarios/listaUsuarios";
+    })
+    creaProducto.addEventListener("click", function(){
+        window.location.href = "/productos/creaProducto";
     })
 })

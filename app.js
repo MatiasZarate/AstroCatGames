@@ -35,7 +35,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.use("/", routes);
 
 app.listen(3002, () => {

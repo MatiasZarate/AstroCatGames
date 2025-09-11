@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta charset="utf-8">
+     <title> ASTRO CAT GAMES </title>
+     <link rel="stylesheet" href="../../css/productos.css" >
+     <script src="/js/detalle.js" defer> </script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+<body class="body"><div class="extra1"> 
+         <%- include("../partials/header") %>
+         
+    <div class="body2"><div class="cajaBorrar2"> 
+          
+        <div class="ibANDnnb"> 
+        <div class="imagenybotones"><img class="fotoDePerfil" src="<%= detalleProducto.imagen %>">
+        <div class="botonesHermanos"><button class="bonot">editar</button><button class="bonot">borrar</button></div></div>      
+        
+        <div class="nombreNumerosyBoton"><h1 class="nombre"> <%= detalleProducto.nombre %></h1>
+        <div class="numeros"><h2 class="numero">$ <%= detalleProducto.precio %></h2><br><h2 >disponibles: <%= detalleProducto.cantidad %></h2></div>
+        <button class="bonotCompra"><h2> añadir al carrito</h2></button> 
+        <h2 class="descripción"> <%= detalleProducto.descripcion %></h2></div> </div><br>
+   
+
+ 
+
+</div><br><%- include("../partials/footer") %>
+</div></div>
+   </div> </body>
+</html>

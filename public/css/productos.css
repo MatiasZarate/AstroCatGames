@@ -71,22 +71,6 @@
     align-items: center;
     flex-direction: column;
 }
-.cajaBorrar{
-    border: solid 5px black;
-    color:black;
-    background-color: silver;
-    width: 100%; 
-    height:/*353*/ /*370*/ 390px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    box-sizing: content-box;
-    
-    
-    /*display: inline-block;*/
-}
 .cajaBorrar2{
     border: solid 5px black;
     color:black;
@@ -99,43 +83,61 @@
     margin-top: 50px;
     padding: 5px;
 }
-.cuadradote{
-    background-color: /*white*/silver;
-    border: solid 5px black;
-    margin-left: 25px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 300px;
-    width: 250px;
-    font-size: small;
-}
-.wrapeate{
+.ibANDnnb{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-}
-.formularioRegistro{
-    margin-left:170px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-right: 300px;
 }
 .fotoDePerfil{
-    width:225px;
-    height: 200px;
+    width:500px;
+    height: 300px;
     padding:0px;
+    margin-bottom: 10px;
 }
+.imagenybotones{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin-right: 50px;
+ padding-left: 0%;
+ margin-left: 270px;
+/* margin-right: 600px;*/
+}
+/*.botonesHermanos{
+}*/
 .bonot{
-    width: 50px;
+    width: 100px;
     height: 30px;
     margin: 2px;
 }
-.dosFuncionalidades{
+.bonotCompra{
+    width: 200px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+.nombreNumerosyBoton{
+ display: flex;
+ flex-direction: column;
+}
+.nombre{
+ margin-bottom: 20px;
+}
+.numeros{
+ display: flex;
+ flex-direction: row;
+ margin-bottom: 20px;
+ width: 500px;
+}
+.numero{
+    margin-right:60px;
+}
+/*.dosFuncionalidades{
     display: flex;
     flex-direction: row;
     justify-content:space-around;
     margin-left: 5px;
-}
-.errores{
-    margin-left:170px;
-}
+}*/
+
+ 

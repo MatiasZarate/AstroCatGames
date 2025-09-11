@@ -126,11 +126,15 @@
     background-position: center;
     background-size: cover;
     border: solid 5px black;
-    height: 65px;
+    height: 75px;
     width: 1350px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    position:relative;
+    /*bottom: 0;*/
+    /*padding: 1em;*/
 }
 /*body principal*/
 .body2{
@@ -143,6 +147,10 @@
 .imagenCentral{
     width: 450px;
     height: 350px;
+}
+.banner{
+    width: 1350px;
+    height: 390px;
 }
 .categorias{
     display: flex;
@@ -270,16 +278,32 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 300px !important;
+    height: 310px !important;
     width: 300px !important;
     overflow-x:auto;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory; /*estos dos sirven por si el titulo e muy largo*/
+   
 }
 .carousel-itemm{
     width: 1150px;
     margin-top: 25px;
+    
+}
+.d-flex{
+    display: flex;
+    flex-wrap: 4;
+    flex-direction: row !important;
+}
+.numeritos{
+    color: black;
+    margin-bottom: 2px;
+}
+.nextyprev{
+    height: 350px;
 }
 /*.carousel-item {
   transition: none !important;
+}*/
+.cuadradote2:hover{
+box-shadow: 0 10px 16px rgba(0,0,0,0.2), 0 10px 20px 0 rgb(0, 0, 0);
 }
-/*yesss ahora lo unico que queda ver es porque hay una animación de superposición al dar next o prev*/
