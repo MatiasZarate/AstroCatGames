@@ -1,7 +1,7 @@
+const fs = require("fs")
 const path = require("path");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
-/*let db = require("../database/models");*/
 let db = require("../database/models");
 
 const cloudinary = require("cloudinary").v2;
@@ -16,17 +16,9 @@ cloudinary.config({
 });
 const mysql = require("mysql");
 
-/*let conexion = mysql.createConnection({
-    host:"localhost", 
-    database:"astrocatgames",
-    user:"root",
-    password:"" 
-})*/
-
 const controlador = {
-    index: async(req, res) => {/*(req,res)=>{
-        res.render("index")
-    }*/ try{
+    index: async(req, res) => {
+    try{
         const listaProductos = await db.productos.findAll({
     order: [['id', 'DESC']]   
     });
@@ -36,7 +28,7 @@ const controlador = {
           res.status(500).send("Error al obtener los datos de la base de datos");
     }},
     prueba: (req, res) =>{
-        res.render("prueba") /**/ 
+        res.render("prueba") 
     },
     listaUsuarios: async(req, res) =>{
         try{
@@ -46,6 +38,20 @@ const controlador = {
           console.error("Error:", error);
           res.status(500).send("Error al obtener los datos de la base de datos");
         }
+    },
+    perfil: async (req, res) => { 
+                        try {
+                          const listado = await db.usuarios.findByPk(req.params.id);
+        
+                  if(listado){
+                        res.render("usuarios/perfil", {listado});
+                    }else{
+                        res.send("no se encontró el usuario :(")
+                    } 
+                } catch (error) {
+                        console.error("Error:", error);
+                        res.status(500).send("Error al obtener los datos de la base de datos");
+                      }
     },
     deleteUsuario: async(req, res)=>{
         try{
@@ -67,7 +73,7 @@ const controlador = {
     },
     postregistro: async (req, res) => {
          let errors = validationResult(req);
-          
+           
            if (!errors.isEmpty()){
             return res.render("usuarios/registro", { errors: errors.array() })
            }
@@ -80,8 +86,16 @@ const controlador = {
       if(req.file){
         const result = await cloudinary.uploader.upload(req.file.path);
         imagen = result.secure_url;
-      }
+     
 
+      fs.unlink(req.file.path, (err) => {
+        if (err) {
+          console.error("Error al borrar el archivo local:", err);
+        } else {
+          console.log("Archivo temporal eliminado:", req.file.path);
+        }
+      });
+     }
             const { nombre, email, edad } = req.body;
                 
             await db.usuarios.create({
@@ -112,16 +126,9 @@ const controlador = {
                         console.error("Error:", error);
                         res.status(500).send("Error al obtener los datos de la base de datos");
                       }
-                
-        //res.render("usuarios/editar")
     },
     editar2: async (req, res) => {
-            try {
-                console.log("BODY:", req.body);
-                console.log("file", req.file);
-                /*console.log("PARAMS:", req.params);
-                console.log("BODY RAW:", req.body);
-                console.log("HEADERS:", req.headers["content-type"]);*/
+            try {               
               const Editarusuario = await db.usuarios.findByPk(req.params.id);
     if (Editarusuario){
         Editarusuario.nombre = req.body.nombre,
@@ -154,8 +161,7 @@ const controlador = {
                 
                 try { 
                     console.log("BODY:", req.body)
-                /*let hashedPassword = bcrypt.hashSync(req.body.password, 10);*/
-                let imagen = 'https://res.cloudinary.com/dduyxqrqt/image/upload/v1755726525/pfpDefault_nia0sd.jpg';
+                let imagen = 'https://res.cloudinary.com/dduyxqrqt/image/upload/v1758029127/jj6kt2ltwhja5qtrhulx.png';
 
 
      
@@ -163,9 +169,15 @@ const controlador = {
       if(req.file){
         const result = await cloudinary.uploader.upload(req.file.path);
         imagen = result.secure_url;
-      }
 
-           /* const { nombre, descripcion, precio, cantidad, categorias } = req.body;*/
+        fs.unlink(req.file.path, (err) => {
+        if (err) {
+          console.error("Error al borrar el archivo local:", err);
+        } else {
+          console.log("Archivo temporal eliminado:", req.file.path);
+        }
+      });
+      }
                 
                 db.productos.create({
                 nombre: req.body.nombre,
@@ -196,7 +208,62 @@ const controlador = {
                         console.error("Error:", error);
                         res.status(500).send("Error al obtener los datos de la base de datos");
                       }
+    },
+  deleteProducto: async(req, res)=>{
+        try{
+            const deleteProducto = await db.productos.findByPk(req.params.id);
+
+        if(deleteProducto){
+            await deleteProducto.destroy();
+            res.redirect("/");
+        }} catch (error) {
+          console.error("Error:", error);
+          res.status(500).send("Error al eliminar los datos de la base de datos");
+        }
+    },
+  editarProducto: async (req, res) => { 
+                        try {
+                          const editarProducto = await db.productos.findByPk(req.params.id);
+        
+                  if(editarProducto){
+                        res.render("productos/editarProducto", {editarProducto});
+                    }else{
+                        res.send("no se encontró al producto :(")
+                    } 
+                } catch (error) {
+                        console.error("Error:", error);
+                        res.status(500).send("Error al obtener los datos de la base de datos");
+                      }
+                
+    
+
+    },
+  editarProducto2:async (req, res) => {
+            try {
+                console.log("BODY:", req.body);
+                console.log("file", req.file);
+              
+              const editarProducto = await db.productos.findByPk(req.params.id);
+    if (editarProducto){
+        editarProducto.nombre = req.body.nombre,
+        editarProducto.descripcion = req.body.descripcion
+        editarProducto.precio = req.body.precio
+        editarProducto.cantidad = req.body.cantidad
+        editarProducto.categoria = req.body.categoria
+
+    if(req.file){
+        const result = await cloudinary.uploader.upload(req.file.path);
+        editarProducto.imagen = result.secure_url;
     }
+        await editarProducto.save();
+        res.redirect("/")
+    }else{
+        res.send("fallo al editar :(")
+    } 
+} catch (error) {
+    console.error("Error:", error);
+    res.status(500).send("Error al editar los datos en la base de datos");
+  }}
 }
 
 

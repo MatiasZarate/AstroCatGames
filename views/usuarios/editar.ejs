@@ -21,7 +21,7 @@
     <ul></ul></div> 
     <br>  <form action="/usuarios/editar/<%= Editarusuario.id.toString()  %>?_method=PUT" method="POST"  id="formularioRegistro" class="formularioRegistro" enctype="multipart/form-data">
     <input type="text" placeholder="nombre de usuario" name="nombre" id="nombre" class="input" value="<%= Editarusuario.nombre %>"><br><br>
-    <input type="password" placeholder="nueva contraseña" name="password" id="password" class="input"><br><br>
+    <input type="password" placeholder="nueva contraseña" name="password" id="password" class="input" value="<%= Editarusuario.password %>"><br><br>
     <input type="email" placeholder="email" name="email" id="email" class="input" value="<%= Editarusuario.email %>"><br><br>
     <input type="number" placeholder="edad" name="edad" id="edad" class="input" value="<%= Editarusuario.edad %>"><br><br>
     <input type="file" placeholder="foto de perfil" name="imagen" id="imagen" class="input"><br><br>

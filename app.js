@@ -16,7 +16,6 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 const multer = require("multer");
-/*const path = require("path");*/
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -29,7 +28,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// hacerlo accesible en todas las rutas
 app.use((req, res, next) => {
   req.upload = upload;
   next();

@@ -9,16 +9,15 @@
     </head>
 <body class="body"><div class="extra1"> 
          <%- include("../partials/header") %>
-         
+          
     <div class="body2"><div class="cajaBorrar2"> 
     <h1>lista de usuarios</h1><br>
     <div class="wrapeate"> 
      
     <% for(let i=0;i<listado.length;i++){%>
-     <div class="cuadradote">
+     <div class="cuadradote perfilBtn" data-id="<%= listado[i].id %>">
         <img class="fotoDePerfil" src="<%= listado[i].imagen  %>">
         <h1><%= listado[i].nombre %></h1>
-        <button class="bonot">perfil</button><div class="dosFuncionalidades"> <form action="/usuarios/delete/<%= listado[i].id %>?_method=DELETE" method="POST"> <button class="bonot" type="submit">borrar</button></form>  <button class="bonot editar editarBtn" data-id="<%= listado[i].id %>">editar</button> </div>
     </div>
     <% } %>
     

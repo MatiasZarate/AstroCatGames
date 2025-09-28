@@ -16,6 +16,9 @@ module.exports = function(sequelize, dataTypes){
         email: {
             type: dataTypes.STRING
         },
+        edad: {
+            type: dataTypes.INTEGER
+        },
         imagen: {
             type: dataTypes.STRING
         },

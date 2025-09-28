@@ -11,7 +11,6 @@ window.addEventListener("load", function(){
   background:"purple",
   color:"black",
   confirmButtonColor:"black"
-  /*luego le cambio el color :v*/ 
 })
 })
 })

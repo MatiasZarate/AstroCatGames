@@ -24,10 +24,6 @@ window.addEventListener("load", function(){
         if(cantidad.value == ""){
             errores.push("el campo de cantidad no puede estar vacio")
         }
-        let imagen = document.getElementById("imagen")
-        if(imagen.value == ""){
-            errores.push("el campo de imagen no puede estar vacio")
-        }
         
 
         if(errores.length > 0){

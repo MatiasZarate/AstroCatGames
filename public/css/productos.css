@@ -10,63 +10,16 @@
     padding: 0;
 }
 .body{
-    /*background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1750548057/Central_Loquendo_City_cygssa.jpg");
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position: center;*/
     background-color: grey; 
     display:flex;
     align-items: center;
     justify-content: center;
     background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg");
     background-position: center;
-    /*background-size:cover;*/
-    /*display: flex;
-    align-items: center;
-    flex-direction: column;*/
-    /*height: 96vh;
-    width: 96vh;*/
-}
-/*
-/*columna */
-.extra1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-.column{
-    background-color: purple;   
-    /*background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835559/image-1689504354-3016_v4aytd.jpg");*/
-    /*border-bottom: solid 5px black;*/
-    /*border-right: solid 5px black;
-    border-left: solid 5px black;*/
-   /* height: 85vh;
-    width: 12%;*/
-    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    display: flex;
-    flex-direction: row;*/
-    height: 40px;
-    /*width: 1350px /*1030px*/;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    display: flex;
-    justify-content: space-around;
-}
-.funcionalidad{
-    color: white;
-    background-color: /*rgb(151, 150, 150)*/grey;
-    border-bottom: solid 2px black;
-    /*margin-left:250px;*/
-    cursor: pointer;
-    height: 40px;
-}
-.funcionalidad:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 /*body principal*/
 .body2{
     width: 1140px; 
-    /*height: 85vh;*/
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -83,12 +36,48 @@
     margin-top: 50px;
     padding: 5px;
 }
+.cajaBorrar22{
+    border: solid 5px purple;
+    color: white !important;
+    color:black;
+    background-color: black;
+    width: 75%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 5px;
+}
+.cajaBorrar3{
+    border: solid 5px black;
+    color:black;
+    background-color: silver;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 5px;
+    flex-wrap: wrap;
+    overflow-wrap: anywhere; 
+  word-break: break-word;   
+}
+.descripcion{
+    width: 400px;       
+    height: auto;  
+    white-space: normal;
+    word-wrap: break-word;
+     overflow-wrap: break-word;
+     max-height: 200px;  
+    overflow-y: auto;
+}
 .ibANDnnb{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    margin-right: 300px;
 }
 .fotoDePerfil{
     width:500px;
@@ -102,11 +91,7 @@
  align-items: center;
  margin-right: 50px;
  padding-left: 0%;
- margin-left: 270px;
-/* margin-right: 600px;*/
 }
-/*.botonesHermanos{
-}*/
 .bonot{
     width: 100px;
     height: 30px;
@@ -133,11 +118,10 @@
 .numero{
     margin-right:60px;
 }
-/*.dosFuncionalidades{
+.botones{
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
-    margin-left: 5px;
-}*/
+}
+
 
  

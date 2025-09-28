@@ -24,7 +24,6 @@ const validateRegister2 = [
     check("precio").notEmpty() .withMessage("debes completar el campo de precio"),
     check("cantidad").notEmpty()
     .isLength({min:1}).withMessage("no puede ser menor de 1"),
-    /*check("imagen").notEmpty().withMessage("debes subir una imagen"),*/
     check("categoria").notEmpty().withMessage("debes seleccionar una categoria")
 ];
 
@@ -33,6 +32,7 @@ const uploadFile = multer();
 router.get("/", homeController.index);
 router.get("/prueba", homeController.prueba);
 router.get("/usuarios/listaUsuarios", homeController.listaUsuarios);
+router.get("/usuarios/perfil/:id", homeController.perfil);
 router.delete("/usuarios/delete/:id", homeController.deleteUsuario);
 router.get("/usuarios/inicioSesion", homeController.inicioSesion);
 router.get("/usuarios/registro", homeController.registro); 
@@ -42,5 +42,8 @@ router.put("/usuarios/editar/:id", upload.single("imagen"), homeController.edita
 router.get("/productos/creaProducto", homeController.creaProducto);
 router.post("/productos/creaProducto", upload.single('imagen'), validateRegister2, homeController.postCreaProducto);
 router.get("/productos/detalleProducto/:id", homeController.detalleProducto);
+router.delete("/productos/delete/:id", homeController.deleteProducto);
+router.get("/productos/editarProducto/:id", homeController.editarProducto);
+router.put("/productos/editarProducto/:id", upload.single('imagen'), homeController.editarProducto2);
 
 module.exports = router; 

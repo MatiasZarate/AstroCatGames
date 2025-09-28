@@ -1,0 +1,136 @@
+/*header*/
+.header{
+    color:white;
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835600/81kTrSqMuLL_l0k3gl.jpg");
+    border: solid 5px black;
+    height: 75px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;
+    justify-content: space-around;
+}
+.fixed{
+    position:fixed;
+    width:100%;
+    z-index: 10;
+}
+.fixed2{
+    position: fixed;
+    z-index: 10;
+    margin-top: 36px;
+    margin-right: 500px;
+}
+.logo{
+    width: 10%;
+}
+.logo:hover{
+    cursor: pointer;
+}
+.titulo{
+    margin-right: 15%;
+}
+.user{
+    display: flex;
+    justify-content:space-around;
+    margin-left: 15px;
+}
+.iniciosesion{
+    width: 200px;
+    border: solid 5px black;
+    margin-right: 5px;
+    padding: 1px;
+    font-size: 25px;
+    cursor: pointer;
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363063/platino_fa3x91.jpg");
+}
+.registro{
+    width: 172px;
+    border: solid 5px black;
+    font-size: 25px;
+    cursor: pointer;
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363063/platino_fa3x91.jpg");
+}
+/*columna */
+.extra1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.column{
+    background-color: purple;   
+    height: 40px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;
+    justify-content: space-around;
+}
+.funcionalidad{
+    color: white;
+    background-color: grey;
+    border-bottom: solid 2px black;
+    cursor: pointer;
+    height: 40px;
+}
+.funcionalidad:hover, .registro:hover, .iniciosesion:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+.carrote{
+  display: none;
+}
+.carrito{
+    position:absolute;
+    top:50px;
+    margin-top: 30px;
+    background-color: white;
+    width: 470px;
+    z-index: 1;
+    border-bottom: solid 3px black;border-left: solid 3px black;border-right: solid 3px black;
+}
+.productiño{ 
+    background-color: plum;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.elemClose:hover{
+    color: red;
+    cursor: pointer;
+}
+.total{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   background-color: silver;
+}
+.totalidad{
+ background-color: plum;
+ 
+}
+.finalizar{
+    margin-top: 5px;
+    margin-bottom: 4px;
+    width: 190px;
+    margin-left: 135px;
+    background-color: grey;
+    color: white;
+}
+.elemNum{
+    font-weight: 800;
+}
+/*footer*/
+.footer{
+    color:black;
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835575/ai-generated-ethereal-cosmic-landscape-with-vibrant-nebula-and-stars-photo_ts5hhr.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: solid 5px black;
+    height: 75px;
+    width: 1350px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position:relative;
+}

@@ -4,8 +4,6 @@ window.addEventListener("load", function(){
     formulario.addEventListener("submit", function(e){
         let errores = [];
 
-        /*alert("me an enviao");*/
-
         let nombre = document.getElementById("nombre")
         if(nombre.value === "" || nombre.value.length > 13 ){
             errores.push("el campo de nombre no puede estar vacio o ser mayor de 13 caracteres")

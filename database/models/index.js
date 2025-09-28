@@ -12,13 +12,6 @@ const db = {};
 console.log("DB_USER:", process.env.DB_USER);
 console.log("DB_NAME:", process.env.DB_NAME);
 
-/*console.log("Conectando con:");
-console.log("DB:", process.env.DB_NAME);
-console.log("USER:", process.env.DB_USER);
-console.log("PASS:", process.env.DB_PASSWORD === "" ? "(vacío)" : process.env.DB_PASSWORD);
-console.log("HOST:", process.env.DB_HOST);
-console.log("PORT:", process.env.DB_PORT);*/
-
 let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);

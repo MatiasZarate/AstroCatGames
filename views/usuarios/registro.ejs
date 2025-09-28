@@ -22,7 +22,6 @@
     <br><form action="/usuarios/registro" method="POST"  id="formularioRegistro" class="formularioRegistro" enctype="multipart/form-data">
     <input type="text" placeholder="nombre de usuario" name="nombre" id="nombre" class="input" value="<%= locals.old && old.nombre %>"><br><br>
     <input type="password" placeholder="contraseña" name="password" id="password" class="input" value="<%= locals.old && old.password %>"><br><br>
-   <!--  <input type="password" placeholder="repita la contraseña" name="password2" id="password2" class="input"><br><br>-->
     <input type="email" placeholder="email" name="email" id="email" class="input" value="<%= locals.old && old.email %>"><br><br>
     <input type="number" placeholder="edad" name="edad" id="edad" class="input" value="<%= locals.old && old.edad %>"><br><br>
     <input type="file" placeholder="foto de perfil" name="imagen" id="imagen" class="input"><br><br>

@@ -10,136 +10,18 @@
     padding: 0;
 }
 .body{
-    /*background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1750548057/Central_Loquendo_City_cygssa.jpg");
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position: center;*/
     background-color: grey; 
     display:flex;
     align-items: center;
     justify-content: center;
     background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg");
-    /*background-repeat: no-repeat;*/
-    /*background-size:cover;*/
     background-position: center;
-    /*background-size:cover;*/
-    /*display: flex;
-    align-items: center;
-    flex-direction: column;*/
-    /*height: 96vh;
-    width: 96vh;*/
 }
-/*.cajaBorrar{
-    border: solid 5px black;
-    color:black;
-    background-color: silver;
-    width: 80%; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-/*header*/
-.header{
-    /*background-color: green;*/
-    color:white;
-    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835600/81kTrSqMuLL_l0k3gl.jpg");
-    border: solid 5px black;
-    height: 75px;
-    /*width: 75%85;*/
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    display: flex;
-    justify-content: space-around;
-}
-.fixed{
-    position:fixed;
-    width:100%;
-    z-index: 10;
-}
-.logo{
-    width: 10%;
-}
-.titulo{
-    /*width: 25%;*/
-    margin-right: 15%;
-}
-.user{
-    display: flex;
-    justify-content:space-around;
-    margin-left: 15px;
-}
-.iniciosesion{
-    width: /*185*/200px;
-    border: solid 5px black;
-    margin-right: 5px;
-    padding: 1px;
-    font-size: 25px;
-    cursor: pointer;
-    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363063/platino_fa3x91.jpg");
-}
-.registro{
-    width: 172px;
-    border: solid 5px black;
-    font-size: 25px;
-    cursor: pointer;
-    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363063/platino_fa3x91.jpg");
-}
-/*columna */
-.extra1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-.column{
-    background-color: purple;   
-    /*background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835559/image-1689504354-3016_v4aytd.jpg");*/
-    /*border-bottom: solid 5px black;*/
-    /*border-right: solid 5px black;
-    border-left: solid 5px black;*/
-   /* height: 85vh;
-    width: 12%;*/
-    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    display: flex;
-    flex-direction: row;*/
-    height: 40px;
-    /*width: 1350px /*1030px*/;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    display: flex;
-    justify-content: space-around;
-}
-.funcionalidad{
-    color: white;
-    background-color: /*rgb(151, 150, 150)*/grey;
-    border-bottom: solid 2px black;
-    /*margin-left:250px;*/
-    cursor: pointer;
-    height: 40px;
-}
-.funcionalidad:hover, .registro:hover, .iniciosesion:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-/*footer*/
-.footer{
-    color:black;
-    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835575/ai-generated-ethereal-cosmic-landscape-with-vibrant-nebula-and-stars-photo_ts5hhr.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border: solid 5px black;
-    height: 75px;
-    width: 1350px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position:relative;
-    /*bottom: 0;*/
-    /*padding: 1em;*/
-}
+
+
 /*body principal*/
 .body2{
     width: 1140px; 
-    /*height: 85vh;*/
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -158,11 +40,9 @@
     align-items: center;
     width: 100%;
     height: 60%;
-    /*border: solid 5px white;*/
     flex-direction: column;
 }
 .botones{
-    /*display: flex;*/
     flex-direction: row;
     justify-content: space-around;
 }
@@ -170,15 +50,13 @@
     width: 150px;
     height: 35px;
     margin: 15px;
-    /*background-color: rgb(248, 208, 4);*/
-    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
     cursor: pointer;
 }
 .btn1:hover, .btn2:hover, .btn3:hover, .btn4:hover, .btn5:hover{
     box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 .cuadradote{
-    background-color: /*white*/silver;
+    background-color: silver;
     border: solid 5px black;
     margin-left: 25px;
     display: flex;
@@ -189,7 +67,7 @@
 }
 .productos1{
     background-color: black;
-    width: 1350px; /*8594100%*/;
+    width: 1350px;
     color: purple;
 
 }
@@ -220,8 +98,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding-block: 16px;/*16px 32px;si borro desaparece*/
-    /*margin: 16px 32px;*/
+    padding-block: 16px;
     overflow-x:auto;
     scroll-snap-type: x mandatory;
     gap: 30px;
@@ -230,7 +107,7 @@
   
 /*carrusel grande bootstrap*/
 .carruselBoteTrapo{
-    width: /*870*/950px;
+    width: 950px;
     height: 410px;
     border: solid 5px black;
     align-items: center;
@@ -245,30 +122,21 @@
 }
 .carousel-control-next, .carousel-control-prev{
     background-color:black;
-    /*ponerle fondo de galaxia o algo así, que no quede como etiquetado de exceso de azucar*/
     background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1736259614/ca08cff753ccdc0c5666300bfb821fce_m73w1d.jpg") !important;
     width: 90px !important;
 }
 .sr-only{
     color: white;
 }
-/*carrusel pequeño bootstrap*/ /*se ve horrible pero caaalma, voy a hacer que se vea bien */
+/*carrusel pequeño bootstrap*/ 
 .productos3{
     background-color: black;
     width: 1350px; 
     color: #800080;
 }
 .productos4{
-    width: 100%;
-    height: 350px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     margin-right: 10px;
     background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835576/A-colorful-galaxy-with-bright-multi-hued-stars-and-cosmic-dust-showcasing-the-beauty-of-the-universe-in-vivid-detail_fi1daw.jpg") ;
-}
-.carousel-alargatexfa{
-    width: 1350px;
 }
 .cuadradote2{
     background-color: silver;
@@ -278,21 +146,15 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 310px !important;
     width: 300px !important;
     overflow-x:auto;
-    scroll-snap-type: x mandatory; /*estos dos sirven por si el titulo e muy largo*/
+    font-size:large;
+    scroll-snap-type: x mandatory;
    
 }
 .carousel-itemm{
+    margin-top: 15px;
     width: 1150px;
-    margin-top: 25px;
-    
-}
-.d-flex{
-    display: flex;
-    flex-wrap: 4;
-    flex-direction: row !important;
 }
 .numeritos{
     color: black;
@@ -301,9 +163,47 @@
 .nextyprev{
     height: 350px;
 }
-/*.carousel-item {
-  transition: none !important;
-}*/
 .cuadradote2:hover{
 box-shadow: 0 10px 16px rgba(0,0,0,0.2), 0 10px 20px 0 rgb(0, 0, 0);
+}
+
+.carousel-alargatexfa {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;   
+  overflow: hidden;    
+}
+
+
+#carouselThree .carousel-inner,
+.productos4 {
+  height: 350px; 
+}
+
+
+
+
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition: opacity .55s ease-in-out;
+  position: absolute;    
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  z-index: 0;
+  display: block;        
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+  position: relative;    
+}
+.cuadradote2 {
+  height: 310px; 
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: silver;
+  border: solid 5px black;
 }

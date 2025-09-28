@@ -10,7 +10,7 @@
          <%- include("../partials/header") %>
          
     <div class="body2"><div class="cajaBorrar2"> 
-    <h1>¡Sube el producto a vender! </h1><br>
+    <h1>¡Edita el producto! </h1><br>
     <%  if (locals.errors) { locals.errors.forEach(error=> { %>
                     <p>
                         <%= error.msg %>
@@ -19,19 +19,19 @@
 
      <div class="errores"> 
     <ul></ul></div> 
-<form action="/productos/creaProducto" method="POST" id="formularioCreaProducto" class="formularioRegistro" enctype="multipart/form-data">
-    <input type="text" placeholder="nombre del producto" name="nombre" id="nombre" class="input" ><br><br>
+<form action="/productos/editarProducto/<%= editarProducto.id.toString()%>?_method=PUT" method="POST" id="formularioCreaProducto" class="formularioRegistro" enctype="multipart/form-data">
+    <input type="text" placeholder="nombre del producto" name="nombre" id="nombre" class="input" value="<%= editarProducto.nombre %>"><br><br>
     <label for="categorias"> Categoria </label>
-        <select name="categoria" id="categoria">
+        <select name="categoria" id="categoria" value="<%= editarProducto.categoria %>">
         <option value="juegos"> Videojuego </option>
         <option value="consolas"> Consola </option>
         <option value="accesorios"> Accesorios </option>
         <option value="merch"> Merch </option>
         <option value="otros"> Otros </option> 
     </select><br><br>
-    <input type="text" placeholder="descripcion del prod." name="descripcion" id="descripcion" class="input" ><br><br>
-    <input type="number" placeholder="precio" name="precio" id="precio" class="input" ><br><br>
-    <input type="number" placeholder="cantidad" value="1" name="cantidad" id="cantidad" class="input"><br><br>
+    <input type="text" placeholder="descripcion del prod." name="descripcion" id="descripcion" class="input" value="<%= editarProducto.descripcion %>"><br><br>
+    <input type="number" placeholder="precio" name="precio" id="precio" class="input" value="<%= editarProducto.precio %>"><br><br>
+    <input type="number" placeholder="cantidad" name="cantidad" id="cantidad" class="input" value="<%= editarProducto.cantidad %>"><br><br>
     <input type="file" placeholder="imagen del prod." name="imagen" id="imagen" class="input"><br><br>
     <button type="submit" class="buto">crear producto</button><br></form>
     

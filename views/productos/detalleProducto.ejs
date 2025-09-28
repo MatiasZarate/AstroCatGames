@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-     <meta charset="utf-8">
+     <meta charset="utf-8"> 
      <title> ASTRO CAT GAMES </title>
      <link rel="stylesheet" href="../../css/productos.css" >
      <script src="/js/detalle.js" defer> </script>
@@ -9,16 +9,16 @@
     </head>
 <body class="body"><div class="extra1"> 
          <%- include("../partials/header") %>
-         
-    <div class="body2"><div class="cajaBorrar2"> 
+          
+    <div class="body2"><div class="cajaBorrar3"> 
           
         <div class="ibANDnnb"> 
         <div class="imagenybotones"><img class="fotoDePerfil" src="<%= detalleProducto.imagen %>">
-        <div class="botonesHermanos"><button class="bonot">editar</button><button class="bonot">borrar</button></div></div>      
+        <div class="botonesHermanos botones"><button class="bonot editarBtn" data-id="<%= detalleProducto.id %>">editar</button> <form action="/productos/delete/<%= detalleProducto.id %>?_method=DELETE" method="POST"><button class="bonot" type="submit">borrar</button></form></div></div>      
         
         <div class="nombreNumerosyBoton"><h1 class="nombre"> <%= detalleProducto.nombre %></h1>
         <div class="numeros"><h2 class="numero">$ <%= detalleProducto.precio %></h2><br><h2 >disponibles: <%= detalleProducto.cantidad %></h2></div>
-        <button class="bonotCompra"><h2> añadir al carrito</h2></button> 
+        <button class="bonotCompra agregar" data-id="<%= detalleProducto.id %>" data-name="<%= detalleProducto.nombre %>" data-price="<%= detalleProducto.precio %>"><h2> añadir al carrito</h2></button> 
         <h2 class="descripción"> <%= detalleProducto.descripcion %></h2></div> </div><br>
    
 

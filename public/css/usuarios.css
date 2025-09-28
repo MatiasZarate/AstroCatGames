@@ -10,63 +10,16 @@
     padding: 0;
 }
 .body{
-    /*background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1750548057/Central_Loquendo_City_cygssa.jpg");
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position: center;*/
     background-color: grey; 
     display:flex;
     align-items: center;
     justify-content: center;
     background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg");
     background-position: center;
-    /*background-size:cover;*/
-    /*display: flex;
-    align-items: center;
-    flex-direction: column;*/
-    /*height: 96vh;
-    width: 96vh;*/
-}
-/*
-/*columna */
-.extra1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-.column{
-    background-color: purple;   
-    /*background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835559/image-1689504354-3016_v4aytd.jpg");*/
-    /*border-bottom: solid 5px black;*/
-    /*border-right: solid 5px black;
-    border-left: solid 5px black;*/
-   /* height: 85vh;
-    width: 12%;*/
-    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    display: flex;
-    flex-direction: row;*/
-    height: 40px;
-    /*width: 1350px /*1030px*/;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    display: flex;
-    justify-content: space-around;
-}
-.funcionalidad{
-    color: white;
-    background-color: /*rgb(151, 150, 150)*/grey;
-    border-bottom: solid 2px black;
-    /*margin-left:250px;*/
-    cursor: pointer;
-    height: 40px;
-}
-.funcionalidad:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 /*body principal*/
 .body2{
     width: 1140px; 
-    /*height: 85vh;*/
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -76,16 +29,13 @@
     color:black;
     background-color: silver;
     width: 100%; 
-    height:/*353*/ /*370*/ 390px;
+    height: 390px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 50px;
     box-sizing: content-box;
-    
-    
-    /*display: inline-block;*/
 }
 .cajaBorrar2{
     border: solid 5px black;
@@ -100,8 +50,9 @@
     padding: 5px;
 }
 .cuadradote{
-    background-color: /*white*/silver;
-    border: solid 5px black;
+    color: white;
+    background-color: black !important ;
+    border: solid 5px purple !important;
     margin-left: 25px;
     margin-bottom: 10px;
     display: flex;
@@ -111,6 +62,9 @@
     height: 300px;
     width: 250px;
     font-size: small;
+}
+.cuadradote:hover{
+box-shadow: 0 10px 16px black, 0 10px 20px 0 black;
 }
 .wrapeate{
     display: flex;
