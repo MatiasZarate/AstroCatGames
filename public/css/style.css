@@ -32,8 +32,22 @@
 }
 .banner{
     width: 1350px;
-    height: 390px;
+    height: 370px;
+    position: relative;
 }
+.clickbait{
+    position: absolute;
+    z-index: 1;
+    color: white;
+    font-size:50px;
+    justify-content: center;
+    margin-left: 10px;
+    text-align: center;
+}
+/*.superponganse{
+    align-items: center;
+    justify-content: center;
+}*/
 .categorias{
     display: flex;
     justify-content: center;
@@ -51,6 +65,8 @@
     height: 35px;
     margin: 15px;
     cursor: pointer;
+    color: whitesmoke;
+    background-color: blueviolet;
 }
 .btn1:hover, .btn2:hover, .btn3:hover, .btn4:hover, .btn5:hover{
     box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -69,7 +85,6 @@
     background-color: black;
     width: 1350px;
     color: purple;
-
 }
 .tituloProducto{
     margin-left: 550px;
@@ -80,7 +95,7 @@
     flex-direction: row;
     justify-content: space-around;
     margin-right: 10px;
-    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835576/A-colorful-galaxy-with-bright-multi-hued-stars-and-cosmic-dust-showcasing-the-beauty-of-the-universe-in-vivid-detail_fi1daw.jpg") ;
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1759173069/giphy_bcbgfi.gif") ;
 }
 /*carrusel barato*/
  
@@ -115,6 +130,12 @@
     background-color: black;
     color: black;
 }
+.d-block{
+    cursor: pointer;
+}
+.dontpointer{
+    cursor: unset !important;
+}
 .carousel-item{
     width: 750px !important;
     height: 400px;
@@ -130,13 +151,18 @@
 }
 /*carrusel pequeño bootstrap*/ 
 .productos3{
-    background-color: black;
-    width: 1350px; 
-    color: #800080;
+   /* background-color: */ color: white;
+    width: 1351px; 
+    /*color:*/ background-color:  #800080;
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1759324707/8fc57cdbfa254eb4b604bc4d1ffee0ab_lindkk.jpg");
+    
 }
 .productos4{
-    margin-right: 10px;
-    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835576/A-colorful-galaxy-with-bright-multi-hued-stars-and-cosmic-dust-showcasing-the-beauty-of-the-universe-in-vivid-detail_fi1daw.jpg") ;
+    margin-right: 1px;
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1759173069/giphy_bcbgfi.gif") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .cuadradote2{
     background-color: silver;
@@ -145,23 +171,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column; 
     width: 300px !important;
     overflow-x:auto;
     font-size:large;
     scroll-snap-type: x mandatory;
-   
+    border-radius: 15px;
+    
 }
 .carousel-itemm{
     margin-top: 15px;
     width: 1150px;
 }
 .numeritos{
+    /*color: black;*/
     color: black;
     margin-bottom: 2px;
 }
 .nextyprev{
     height: 350px;
+    width: 55px;
 }
 .cuadradote2:hover{
 box-shadow: 0 10px 16px rgba(0,0,0,0.2), 0 10px 20px 0 rgb(0, 0, 0);
@@ -180,8 +209,13 @@ box-shadow: 0 10px 16px rgba(0,0,0,0.2), 0 10px 20px 0 rgb(0, 0, 0);
   height: 350px; 
 }
 
-
-
+.agregar{
+    background-color: silver;
+}
+/*.agregar:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: blueviolet;
+}*/ /*no me convence, mejor que quede así*/
 
 .carousel-fade .carousel-item {
   opacity: 0;
@@ -204,6 +238,9 @@ box-shadow: 0 10px 16px rgba(0,0,0,0.2), 0 10px 20px 0 rgb(0, 0, 0);
   height: 310px; 
   box-sizing: border-box;
   overflow: hidden;
+  /*background-color: silver;*/
   background-color: silver;
-  border: solid 5px black;
+  color: black;
+  border: solid 5px purple;
+  background-image:url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg");
 }

@@ -21,7 +21,8 @@
 .body2{
     width: 1140px; 
     display: flex;
-    align-items: center;
+   /* align-items: center;*/
+    justify-content: center;
     flex-direction: column;
 }
 .cajaBorrar{
@@ -35,7 +36,8 @@
     align-items: center;
     justify-content: center;
     margin-top: 50px;
-    box-sizing: content-box;
+    /*box-sizing: content-box;*/
+    border-radius: 15px;
 }
 .cajaBorrar2{
     border: solid 5px black;
@@ -48,6 +50,7 @@
     justify-content: center;
     margin-top: 50px;
     padding: 5px;
+    border-radius: 15px;
 }
 .cuadradote{
     color: white;
@@ -62,17 +65,60 @@
     height: 300px;
     width: 250px;
     font-size: small;
+    border-radius: 15px;
 }
 .cuadradote:hover{
 box-shadow: 0 10px 16px black, 0 10px 20px 0 black;
+cursor: pointer;
 }
 .wrapeate{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.formularioRegistro{
-    margin-left:170px;
+.formularioSesion{
+    align-items: center;
+}
+.inputSesion{
+    height: 30px;
+    width: 550px;
+    font-size: 20px;
+    padding: 0%;
+}
+.inputRegistro{
+    height: 30px;
+    width: 550px;
+    font-size: 20px;
+    padding: 0%;
+}
+.inputProducto{
+    height: 30px;
+    width: 550px;
+    font-size: 20px;
+    padding: 0%;
+}
+.label{
+    font-size: 20px;
+}
+.butonn{
+    font-size: 20px;
+    width: 250px;
+    height: 35px;
+    margin-left: 150px;
+    margin-bottom: 50px;
+    /*background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg");*/
+}
+.buto{
+    font-size: 20px;
+    width: 250px;
+    height: 35px;
+    /*margin-left: 150px;*/
+    margin-bottom: 50px;
+}
+.butonn:hover, .buto:hover{
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: blueviolet;
 }
 .fotoDePerfil{
     width:225px;
@@ -83,6 +129,7 @@ box-shadow: 0 10px 16px black, 0 10px 20px 0 black;
     width: 50px;
     height: 30px;
     margin: 2px;
+    
 }
 .dosFuncionalidades{
     display: flex;
