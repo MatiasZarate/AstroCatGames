@@ -2,18 +2,26 @@ window.addEventListener("load", function(){
     let logo = document.getElementById("logo")
     let inicioSesion = document.getElementById("inicioSesion")
     let registro = document.getElementById("registro")
+    let carritoBtn = document.getElementById("carritoIcon")
     let lsitaUsuarios = document.getElementById("listaUsuarios")
     let creaProducto = document.getElementById("creaProducto")
     let carritoIcon = document.getElementById("carritoIcon")
     let finalizar = document.getElementById("finalizar")
     let fixed2 = document.querySelector('.fixed2')
+    let fixed3 = document.querySelector('.fixed3')
+    let perfilBtnnId = document.getElementById("perfilBtnnId")
+    let botonesPerfilHeader = document.querySelector('.botonesPerfilHeader')
+    let botonesCerrarSesHeader = document.querySelector('.botonesCerrarSesHeader')
     let agregar = document.querySelectorAll('.agregar')
     let rowProduct = document.querySelector('.addCart')
     let allProducts = []
     const valorTotal = document.querySelector('.valorTotal')
     const containerProduct = "";
     const countProductos = document.querySelector('.carritoCount')
-     
+    const fixed = document.querySelector('.fixed')
+    const usuarioLogueado = fixed.dataset.user === 'true';
+    /*let botonCerrar = */
+      
     const showHtml = () =>{
         rowProduct.innerHTML = "";
 
@@ -56,6 +64,26 @@ window.addEventListener("load", function(){
     })
     carritoIcon.addEventListener("click", function(){
         fixed2.classList.toggle('carrote')
+    })
+    perfilBtnnId.addEventListener("click", function(){
+        fixed3.classList.toggle('perfilBtnn')
+    })
+    botonesPerfilHeader.addEventListener("click", function(){
+       
+        if(usuarioLogueado){
+            let id = botonesPerfilHeader.getAttribute("data-id");
+            window.location.href = "/usuarios/perfil/" + id;
+        }else{
+            alert("debes iniciar sesión primero")
+        }
+   
+    })
+    botonesCerrarSesHeader.addEventListener("click", function(){
+        if(usuarioLogueado){
+            window.location.href = "/logOut";
+        }else{
+            alert("debes iniciar sesión primero")
+        }
     })
     agregar.forEach((boton) => {
          boton.addEventListener("click", function() {

@@ -10,14 +10,23 @@
          <%- include("../partials/header") %>
          
     <div class="body2"><div class="cajaBorrar"> 
-    <h1>Inicio de sesión</h1><br><br>
-    <form action="/" method="POST" id="formularioSesion" class="formularioSesion">
-    <input type="text" placeholder="nombre de usuario" id="nombre" class="inputSesion"><br><br>
-    <input type="password" placeholder="contraseña" id="contraseña" class="inputSesion"><br><br>
-    <button class="butonn">iniciar sesión</button></form>
-
+    <h1>Inicio de sesión</h1><br>
+     <% if (locals.errors && errors.nombre) { %>
+             <div> 
+                <%= errors.nombre.msg %>
+             </div>
+    <% } %> 
+    <div class="errorres">
+    <ul></ul></div>
+    <br>
+    <form action="/usuarios/inicioSesion" method="POST" id="formularioSesion" class="formularioSesion">
+    <input type="text" placeholder="nombre de usuario" id="nombre" class="nombre inputSesion" name="nombre" value="<%= locals.old && old.nombre %>"><br><br>
+    <input type="password" placeholder="contraseña" id="contraseña" class="inputSesion" name="password"><br><br>
+    <button class="butonn" >iniciar sesión</button></form>
+ 
     </div>
-   <br><br> <%- include("../partials/footer") %>
-    </div></div>
-   </div> </body>
-</html>
+   <br><br> 
+    </div><%- include("../partials/footer") %></div>
+    <script src="/js/inicioSesion.js"> </script>
+   </div>  </body>
+</html> 

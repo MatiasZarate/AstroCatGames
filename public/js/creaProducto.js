@@ -5,8 +5,8 @@ window.addEventListener("load", function(){
         let errores = [];
 
         let nombre = document.getElementById("nombre")
-        if(nombre.value === "" || nombre.value.length > 20 ){
-            errores.push("el campo de nombre no puede estar vacio o ser mayor de 20 caracteres")
+        if(nombre.value === "" || nombre.value.length > 12 ){
+            errores.push("el campo de nombre no puede estar vacio o ser mayor de 12 caracteres")
         }
         let categoria = document.getElementById("categoria")
         if(categoria.value == ""){

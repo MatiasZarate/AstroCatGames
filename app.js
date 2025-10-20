@@ -5,6 +5,8 @@ const express = require('express');
 const app = express();
 const path = require("path");
 
+const session = require("express-session") 
+
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
@@ -14,6 +16,12 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+
+app.use(session({
+    secret: "buizel",
+    resave: false,
+    saveUninitialized: false
+})) 
 
 const multer = require("multer");
 
@@ -30,6 +38,11 @@ const upload = multer({ storage });
 
 app.use((req, res, next) => {
   req.upload = upload;
+  next();
+});
+
+app.use((req, res, next) => {
+  res.locals.userLogged = req.session.userLogged || null;
   next();
 });
 

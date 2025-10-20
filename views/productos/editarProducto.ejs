@@ -6,7 +6,7 @@
      <link rel="stylesheet" href="../../css/usuarios.css" >
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
-<body class="body"><div class="extra1"> 
+<body class="body"><div class="extra1">  
          <%- include("../partials/header") %>
          
     <div class="body2"><div class="cajaBorrar2"> 
@@ -20,24 +20,24 @@
      <div class="errores"> 
     <ul></ul></div> 
 <form action="/productos/editarProducto/<%= editarProducto.id.toString()%>?_method=PUT" method="POST" id="formularioCreaProducto" class="formularioRegistro" enctype="multipart/form-data">
-    <input type="text" placeholder="nombre del producto" name="nombre" id="nombre" class="input" value="<%= editarProducto.nombre %>"><br><br>
-    <label for="categorias"> Categoria </label>
+    <input type="text" placeholder="nombre del producto" name="nombre" id="nombre" class="inputProducto" value="<%= editarProducto.nombre %>"><br><br>
+    <label for="categorias" class="label"> Categoria </label>
         <select name="categoria" id="categoria" value="<%= editarProducto.categoria %>">
         <option value="juegos"> Videojuego </option>
         <option value="consolas"> Consola </option>
         <option value="accesorios"> Accesorios </option>
         <option value="merch"> Merch </option>
-        <option value="otros"> Otros </option> 
+        <option value="packs"> Packs </option> 
     </select><br><br>
-    <input type="text" placeholder="descripcion del prod." name="descripcion" id="descripcion" class="input" value="<%= editarProducto.descripcion %>"><br><br>
-    <input type="number" placeholder="precio" name="precio" id="precio" class="input" value="<%= editarProducto.precio %>"><br><br>
-    <input type="number" placeholder="cantidad" name="cantidad" id="cantidad" class="input" value="<%= editarProducto.cantidad %>"><br><br>
-    <input type="file" placeholder="imagen del prod." name="imagen" id="imagen" class="input"><br><br>
-    <button type="submit" class="buto">crear producto</button><br></form>
+    <input type="text" placeholder="descripcion del prod." name="descripcion" id="descripcion" class="inputProducto" value="<%= editarProducto.descripcion %>"><br><br>
+    <input type="number" placeholder="precio" name="precio" id="precio" class="inputProducto" value="<%= editarProducto.precio %>"><br><br>
+    <input type="number" placeholder="cantidad" name="cantidad" id="cantidad" class="inputProducto" value="<%= editarProducto.cantidad %>"><br><br>
+    <input type="file" placeholder="imagen del prod." name="imagen" id="imagen" class="inputProducto"><br><br>
+    <button type="submit" class="buto butonn">crear producto</button><br></form>
     
     
    
- </div><br><br><%- include("../partials/footer") %>
-</div>
+ </div><br><br>
+</div><%- include("../partials/footer") %>
    </div>  <script src="/js/creaProducto.js"> </script>  </body> 
 </html>

@@ -1,11 +1,16 @@
 <link rel="stylesheet" href="/css/partials.css">
-<div class="fixed"> 
-    <div class="header"> <img class="logo" id="logo" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1756215853/GAMERKAT_bf9oz4.png"> <h1 class="titulo"> ASTRO CAT GAMES </h1> <div class="user">  <h2 class="iniciosesion" id="inicioSesion"> iniciar sesión</h2><h2 class="registro" id="registro">registrarse</h2></div></div>
-      <div class="column">
+<div class="fixed" data-user="<%= userLogged ? 'true' : 'false' %>"> 
+    <div class="header"> <img class="logo" id="logo" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1756215853/GAMERKAT_bf9oz4.png"> <h1 class="titulo"> ASTRO CAT GAMES </h1>  <div class="user">  <h2 class="iniciosesion" id="inicioSesion"> iniciar sesión</h2><h2 class="registro" id="registro">registrarse</h2></div> 
+  <div class="perfilBtnn" ><img class="fotoDePerfilHeader" id="perfilBtnnId" src="<%= userLogged?.imagen || 'https://res.cloudinary.com/dduyxqrqt/image/upload/v1760400678/pfpDefaultOG_sv1w00.jpg' %>"><div class="fixed3 perfilCaja">
+   <div class="botonesPerfilHeader2"> <div class="botonesPerfilHeader" data-id="<%= userLogged?.id || '' %>"><p> perfil </p></div>
+   <div class="botonesCerrarSesHeader" id="botonCerrar"><p> cerrar sesión </p></div></div>
+  </div></div>
+  </div>
+      <div class="column"> 
      <h2 class="funcionalidad" id="creaProducto"> subir producto</h2>
      <h2 class="funcionalidad carritoCount" id="carritoIcon"> carrito( 0 )</h2>
      <h2 class="funcionalidad" id ="listaUsuarios">  lista de usuarios  </h2>
-    </div></div>
+      </div></div>
     <div class="fixed2 carrote"> <div class="carrito"> <div class="addCart" > 
     <div class="productiño"> </div></div>
     <div class="totalidad"> <div class="total"> <h4>total:</h4> <h4 class="elemNum valorTotal"> $ 0</h4>  </div> 

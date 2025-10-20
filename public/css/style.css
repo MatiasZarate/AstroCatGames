@@ -8,7 +8,7 @@
     /*solución a bordes (para futuros proyectos ;v )*/
     margin: 0;
     padding: 0;
-}
+} 
 .body{
     background-color: grey; 
     display:flex;
@@ -30,10 +30,14 @@
     width: 450px;
     height: 350px;
 }
+/*.principalUno, .principalDos, .principalTres, .principalCuatro, .principalCinco{
+ cursor: pointer !important; 
+}*/
 .banner{
     width: 1350px;
     height: 370px;
     position: relative;
+    margin-right: 1px;
 }
 .clickbait{
     position: absolute;
@@ -60,16 +64,22 @@
     flex-direction: row;
     justify-content: space-around;
 }
-.btn1, .btn2, .btn3, .btn4, .btn5{
-    width: 150px;
+/*.btn1, .btn2, .btn3, .btn4, .btn5{
+    
+    cursor: pointer;
+}*/
+.btnCategoria{
+width: 150px;
     height: 35px;
     margin: 15px;
-    cursor: pointer;
-    color: whitesmoke;
-    background-color: blueviolet;
 }
 .btn1:hover, .btn2:hover, .btn3:hover, .btn4:hover, .btn5:hover{
     box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    color: whitesmoke;
+    background-color: /*blueviolet*/ darkmagenta /*purple*/;
+}
+.titular{
+    padding-left: 5px;
 }
 .cuadradote{
     background-color: silver;
@@ -95,7 +105,7 @@
     flex-direction: row;
     justify-content: space-around;
     margin-right: 10px;
-    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1759173069/giphy_bcbgfi.gif") ;
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1759173069/giphy_bcbgfi.gif");
 }
 /*carrusel barato*/
  
@@ -171,8 +181,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; 
-    width: 300px !important;
+    flex-direction: column;  
+    width: 340px !important;
     overflow-x:auto;
     font-size:large;
     scroll-snap-type: x mandatory;
@@ -186,7 +196,7 @@
 .numeritos{
     /*color: black;*/
     color: black;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
 }
 .nextyprev{
     height: 350px;
@@ -211,6 +221,14 @@ box-shadow: 0 10px 16px rgba(0,0,0,0.2), 0 10px 20px 0 rgb(0, 0, 0);
 
 .agregar{
     background-color: silver;
+    /*background-color: gray !important;*/
+    color: black;
+    margin-bottom: 10px;
+}
+.agregar:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: purple !important;
+    color: white;
 }
 /*.agregar:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);

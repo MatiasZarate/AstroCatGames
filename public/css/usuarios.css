@@ -7,7 +7,7 @@
     font-family: 'Orbitron', sans-serif; /*ta buenaaaa*/
     /*solución a bordes (para futuros proyectos ;v )*/
     margin: 0;
-    padding: 0;
+    padding: 0; 
 }
 .body{
     background-color: grey; 
@@ -54,6 +54,7 @@
 }
 .cuadradote{
     color: white;
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1760660086/blackk_g3xm8m.jpg");
     background-color: black !important ;
     border: solid 5px purple !important;
     margin-left: 25px;
@@ -118,7 +119,8 @@ cursor: pointer;
 .butonn:hover, .buto:hover{
   cursor: pointer;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  background-color: blueviolet;
+  background-color: purple;
+  color: whitesmoke;
 }
 .fotoDePerfil{
     width:225px;

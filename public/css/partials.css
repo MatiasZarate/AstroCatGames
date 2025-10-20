@@ -19,6 +19,65 @@
     margin-top: 36px;
     margin-right: 500px;
 }
+.fixed3{
+   display: none; 
+}
+.perfilBtnn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 25px;
+    /*margin-top: 50px;*/
+}
+.perfilCaja{
+    /*position:absolute;
+    top:50px;*/
+    margin-top: 165px;
+    margin-right: 48px;
+    position: absolute;
+    z-index: 21;
+    width: 110px;
+    height: 100px;
+    /*border: solid 3px black;*/
+}
+/*acomoda esos dos botones carajo >:v*/
+.botonesPerfilHeader2/*grupal*/{
+    margin-top: 10px;
+    border: solid 3px black;
+    height: 110px;
+    /*background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1736259135/photo-1550684376-efcbd6e3f031_ekeoui.jpg");*/
+    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835600/81kTrSqMuLL_l0k3gl.jpg");
+}
+.botonesPerfilHeader/*individual*/{
+     color: black;
+     width: 100%;
+     height: 55px;
+     padding-left: 27px;
+     padding-top: 12px;
+     border-bottom:solid 3px black;
+     color: white;
+    
+}
+.botonesCerrarSesHeader{
+     color: white;
+     width: 100%;
+     height: 55px;
+     padding-left: 25px;
+}
+.botonesPerfilHeader:hover, .botonesCerrarSesHeader:hover{
+   cursor: pointer;
+   color: blueviolet;
+}
+.fotoDePerfilHeader{
+    position: absolute;
+    margin-right: 50px;
+    margin-top: 2px;
+    height: 62px;
+    width: 75px;
+    border-radius:100%;
+    cursor: pointer;
+} 
 .logo{
     width: 10%;
 }
@@ -31,8 +90,9 @@
 .user{
     display: flex;
     justify-content:space-around;
-    margin-left: 15px;
+    margin-right: 50px;
 }
+
 .iniciosesion{
     width: 195px;
     padding-left: 4px;
@@ -88,8 +148,6 @@
 .funcionalidad:hover, .registro:hover, .iniciosesion:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-
-
 .carrote{
   display: none;
 }
@@ -116,7 +174,7 @@
     color: red;
     cursor: pointer;
 }
-.total{ 
+.total{  
    display: flex;
    flex-direction: row;
    justify-content: center;
@@ -136,6 +194,9 @@
     margin-left: 135px;
     background-color: blueviolet;
     color: white;
+}
+.finalizar:hover{
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 .elemNum{
     font-weight: 800;
@@ -159,9 +220,27 @@
     padding: 2px;
     background-color: gray;
     color: white;
+    height: 50px;
+    margin-right: 50px;
+    margin-left: 20px;
 }
 .botonFoot:hover{
   cursor: pointer;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   background-color: purple;
+}
+.redes{
+    width: 290px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.wazaa,  .instaa{ 
+    width: 85px;
+    height: 40px;
+    border-radius: 10px;
+}
+.wazaa:hover,  .instaa:hover{ 
+    cursor:pointer;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }

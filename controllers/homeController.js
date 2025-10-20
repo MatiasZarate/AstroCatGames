@@ -15,14 +15,21 @@ cloudinary.config({
   debug: true
 });
 const mysql = require("mysql");
+const { where } = require("sequelize");
 
 const controlador = {
     index: async(req, res) => {
     try{
+        const listado = await db.usuarios.findByPk(req.params.id);
+
         const listaProductos = await db.productos.findAll({
     order: [['id', 'DESC']]   
     });
-        res.render("index", {listaProductos})
+        const productosUltimos = await db.productos.findAll({
+    where: {cantidad: "1"}
+    });
+      res.render("index", {listaProductos, productosUltimos, userLogged: req.session.userLogged})
+        
     }catch (error) {
           console.error("Error:", error);
           res.status(500).send("Error al obtener los datos de la base de datos");
@@ -67,6 +74,43 @@ const controlador = {
     },
     inicioSesion: (req, res) =>{
         res.render("usuarios/inicioSesion") 
+    },
+    inicioSesionDos: async(req,res)=>{
+      try {
+      /*let user = db.usuarios;
+      let userToLogin = await user.findByField("nombre", req.body.nombre)*/
+      const userToLogin = await db.usuarios.findOne({
+      where: { nombre: req.body.nombre }
+      });
+     
+     if(userToLogin){
+    let isOkiDoky = await bcrypt.compare(req.body.password, userToLogin.password);
+    if(isOkiDoky){
+      delete userToLogin.password;
+      req.session.userLogged = userToLogin;
+      
+      return res.redirect("/")
+    }else{
+      return res.render("usuarios/inicioSesion", {
+        errors:{
+          nombre:{msg: "La contraseña es invalida"}},
+      old: req.body
+      });
+     }
+     }else{
+      return res.render("usuarios/inicioSesion", {
+        errors:{
+          nombre:{msg: "no se encuentra al usuario"}},
+      old: req.body
+      })
+     }
+    }catch(error){
+      throw error;
+    }
+    },
+    logOut: (req,res) => {
+     req.session.destroy();
+     return res.redirect("/")
     },
     registro: (req, res) =>{
         res.render("usuarios/registro")
@@ -236,7 +280,7 @@ const controlador = {
                       }
                 
     
-
+ 
     },
   editarProducto2:async (req, res) => {
             try {
@@ -263,7 +307,62 @@ const controlador = {
 } catch (error) {
     console.error("Error:", error);
     res.status(500).send("Error al editar los datos en la base de datos");
-  }}
+  }},
+  videojuegos: async(req, res) =>{
+        try{
+            const listadoProductos = await db.productos.findAll({
+              where: {categoria:"juegos"}
+            });
+            res.render("categorias/videojuegos", { listadoProductos })
+        }catch (error) {
+          console.error("Error:", error);
+          res.status(500).send("Error al obtener los datos de la base de datos");
+        }
+    },
+    consolas: async(req, res) =>{
+        try{
+            const listadoProductos = await db.productos.findAll({
+              where: {categoria:"consolas"}
+            });
+            res.render("categorias/consolas", { listadoProductos })
+        }catch (error) {
+          console.error("Error:", error);
+          res.status(500).send("Error al obtener los datos de la base de datos");
+        }
+    },
+    accesorios: async(req, res) =>{
+        try{
+            const listadoProductos = await db.productos.findAll({
+              where: {categoria:"accesorios"}
+            });
+            res.render("categorias/accesorios", { listadoProductos })
+        }catch (error) {
+          console.error("Error:", error);
+          res.status(500).send("Error al obtener los datos de la base de datos");
+        }
+    },
+    merch: async(req, res) =>{
+        try{
+            const listadoProductos = await db.productos.findAll({
+              where: {categoria:"merch"}
+            });
+            res.render("categorias/merch", { listadoProductos })
+        }catch (error) {
+          console.error("Error:", error);
+          res.status(500).send("Error al obtener los datos de la base de datos");
+        }
+    },
+    packs: async(req, res) =>{
+        try{
+            const listadoProductos = await db.productos.findAll({
+              where: {categoria:"packs"}
+            });
+            res.render("categorias/packs", { listadoProductos })
+        }catch (error) {
+          console.error("Error:", error);
+          res.status(500).send("Error al obtener los datos de la base de datos");
+        }
+    }
 }
 
 

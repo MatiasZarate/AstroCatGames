@@ -18,20 +18,20 @@
 <div id="carouselOne" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block dontpointer w-100" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1754842179/switch2_xl4dho.jpg" alt="First slide">
+      <img class="d-block dontpointer w-100 btn1" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1754842179/switch2_xl4dho.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block dontpointer w-100" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1759066516/astrogoat_wi24ff.jpg" alt="Second slide">
+      <img class="d-block dontpointer w-100 btn2" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1759066516/astrogoat_wi24ff.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block dontpointer w-100" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1759066966/1366_2000_zuv9dr.jpg" alt="Third slide">
+      <img class="d-block dontpointer w-100 btn3" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1759066966/1366_2000_zuv9dr.jpg" alt="Third slide">
     </div>
      <div class="carousel-item">
-      <img class="d-block dontpointer w-100" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1759067967/esteeselbueno_kl6shd.jpg" alt="fourth slide">
+      <img class="d-block dontpointer w-100 btn4" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1759067967/esteeselbueno_kl6shd.jpg" alt="fourth slide">
     </div>
      <div class="carousel-item">
-      <img class="d-block dontpointer w-100" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1759066851/elden_ny9oim.jpg" alt="fifth slide">
-    </div>
+      <img class="d-block dontpointer w-100 btn5" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1759066851/elden_ny9oim.jpg" alt="fifth slide">
+    </div> 
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselOne" data-bs-slide="prev">
     
@@ -43,13 +43,13 @@
 </div>
 </div>
 <br>
-        
+         
 
 <br><div class="categorias"> <h1> Categorias </h1> 
-    <div class="botones"> <button class="btn1"> videojuegos </button><button class="btn2"> consolas </button><button class="btn3"> accesorios </button><button class="btn4"> merch </button><button class="btn5"> packs </button> </div> </div>
+    <div class="botones"> <button class="btn1 btnCategoria"> videojuegos </button><button class="btn2 btnCategoria"> consolas </button><button class="btn3 btnCategoria"> accesorios </button><button class="btn4 btnCategoria"> merch </button><button class="btn5 btnCategoria"> packs </button> </div> </div>
      
 
-<br><div class="productos3"> <h1> Productos recientes</h1> <div class="productos4"> 
+<br><div class="productos3"> <h1 class="titular"> Productos recientes</h1> <div class="productos4"> 
 <div id="carouselTwo" class="carousel slide carousel-fade" data-bs-ride="carousel"><div class="carousel-inner"> <div class="carousel-alargatexfa">
 
 
@@ -57,7 +57,7 @@
       <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
       <div class="carousel-itemm">
       <div class="d-flex productoCarrito" >
-
+  
     <% for (let j = i; j < i + 4 && j < listaProductos.length; j++) { %>
       <div class="cuadradote2 m-2 ">
 
@@ -80,25 +80,25 @@
 </button>
 </div></div></div></div>
 
-<br><div class="productos3"> <h1> Ultimo disponible!!</h1> <div class="productos4"> 
+<br><div class="productos3"> <h1 class="titular"> Ultimo disponible!!</h1> <div class="productos4"> 
 <div id="carouselThree" class="carousel slide carousel-fade" data-bs-ride="carousel"><div class="carousel-inner"> <div class="carousel-alargatexfa">
 
 
-    <% for (let i = 0; i < listaProductos.length; i += 4) { %>
+     <% for (let i = 0; i < productosUltimos.length; i += 4) { %>
       <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
       <div class="carousel-itemm">
       <div class="d-flex productoCarrito" >
-
-    <% for (let j = i; j < i + 4 && j < listaProductos.length; j++) { %>
+  
+    <% for (let j = i; j < i + 4 && j < productosUltimos.length; j++) { %>
       <div class="cuadradote2 m-2 ">
 
-    <h2><%= listaProductos[j].nombre %></h2>
-              <img class="d-block perfilBtn" data-id="<%= listaProductos[j].id %>" src="<%= listaProductos[j].imagen %>" width="200" height="150">
+    <h2><%= productosUltimos[j].nombre %></h2>
+              <img class="d-block perfilBtn" data-id="<%= productosUltimos[j].id %>" src="<%= productosUltimos[j].imagen %>" width="200" height="150">
               <div class="numeritos">
-                <h5>$ <%= listaProductos[j].precio %></h5>
-                <h5><%= listaProductos[j].cantidad %> disponibles</h5>
+                <h5>$ <%= productosUltimos[j].precio %></h5>
+                <h5><%= productosUltimos[j].cantidad %> disponibles</h5>
               </div>
-              <button class="agregar" data-id="<%= listaProductos[j].id %>" data-name="<%= listaProductos[j].nombre %>" data-price="<%= listaProductos[j].precio %>"> Agregar al carrito</button>
+              <button class="agregar" data-id="<%= productosUltimos[j].id %>" data-name="<%= productosUltimos[j].nombre %>" data-price="<%= productosUltimos[j].precio %>"> Agregar al carrito</button>
             </div>
           <% } %></div></div></div><% } %></div>
 
@@ -114,7 +114,7 @@
 <h1 class="clickbait">LAS MEJORES OFERTAS GAMER EN TODA ARGENTINA</h1>
 <img class="banner" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1759326488/Pixaloop_28_09_2025_20_22_13_9120000_vcy687.gif">
 </div><br>
-<br><div class="productos3"> <h1> Productos más accesibles!!</h1> <div class="productos4"> 
+<br><div class="productos3"> <h1 class="titular"> Productos más accesibles!!</h1> <div class="productos4"> 
 <div id="carouselFour" class="carousel slide carousel-fade" data-bs-ride="carousel"><div class="carousel-inner"> <div class="carousel-alargatexfa">
 
 
@@ -151,4 +151,4 @@
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
  <script src="/js/index.js"> </script>
 </body>
-</html>
+</html> 

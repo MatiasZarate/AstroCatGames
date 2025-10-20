@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta charset="utf-8">
+     <title> ASTRO CAT GAMES </title>
+     <link rel="stylesheet" href="../../css/listadoProductos.css" >
+     <script src="/js/listaProductos.js" defer> </script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script src="https://kit.fontawesome.com/8d5432346c.js" crossorigin="anonymous"></script>
+    </head>
+<body class="body"><div class="extra1"> 
+         <%- include("../partials/header") %>
+          
+    <div class="body2"><div class="cajaBorrar2"> 
+    <h1>Videojuegos disponibles</h1><br>
+    <div class="wrapeate"> 
+     
+   <% if(listadoProductos.length >= 1){ %>
+     <% for(let i=0;i<listadoProductos.length;i++){%>
+     <div class="cuadradote " data-id="<%= listadoProductos[i].id %>">
+        <img class="fotoDePerfil perfilBtn" data-id="<%= listadoProductos[i].id %>" src="<%= listadoProductos[i].imagen  %>">
+        <h1 class="nombre"><%= listadoProductos[i].nombre %></h1> 
+        <h2>$ <%= listadoProductos[i].precio %></h2>
+        <h3><%= listadoProductos[i].cantidad %> disponibles</h3>
+        <button class="agregar buto" data-id="<%= listadoProductos[i].id %>" data-name="<%= listadoProductos[i].nombre %>" data-price="<%= listadoProductos[i].precio %>"> agregar al carrito </button>
+    </div><% } %>
+    <% } else{ %>
+    <div class="cuadradote noProducts">
+        <i class="fa-solid fa-xmark x"></i>
+        <h2 class="noHay">no hay productos disponibles actualmente</h2>
+    </div>
+    <% } %>
+    
+</div>
+
+</div>
+</div><%- include("../partials/footer") %></div>
+   </div> </body>
+</html>
