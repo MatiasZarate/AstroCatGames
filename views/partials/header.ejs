@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="/css/partials.css">
-<div class="fixed" data-user="<%= userLogged ? 'true' : 'false' %>"> 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/8d5432346c.js" crossorigin="anonymous"></script>
+<div class="fixed" 
+data-user="<%= userLogged ? 'true' : 'false' %>"
+data-user-admin="<%= userLogged && userLogged.admin ? 'true' : 'false' %>"> 
     <div class="header"> <img class="logo" id="logo" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1756215853/GAMERKAT_bf9oz4.png"> <h1 class="titulo"> ASTRO CAT GAMES </h1>  <div class="user">  <h2 class="iniciosesion" id="inicioSesion"> iniciar sesión</h2><h2 class="registro" id="registro">registrarse</h2></div> 
   <div class="perfilBtnn" ><img class="fotoDePerfilHeader" id="perfilBtnnId" src="<%= userLogged?.imagen || 'https://res.cloudinary.com/dduyxqrqt/image/upload/v1760400678/pfpDefaultOG_sv1w00.jpg' %>"><div class="fixed3 perfilCaja">
    <div class="botonesPerfilHeader2"> <div class="botonesPerfilHeader" data-id="<%= userLogged?.id || '' %>"><p> perfil </p></div>
@@ -13,8 +17,8 @@
       </div></div>
     <div class="fixed2 carrote"> <div class="carrito"> <div class="addCart" > 
     <div class="productiño"> </div></div>
-    <div class="totalidad"> <div class="total"> <h4>total:</h4> <h4 class="elemNum valorTotal"> $ 0</h4>  </div> 
+    <div class="totalidad"> <div class="total"> <h4 class="totalpuntos">total:</h4> <h4 class="elemNum valorTotal"> $ 0</h4>  </div> 
     <button class="finalizar" id="finalizar"> finalizar compra </button></div>
   </div></div>
-   <br><br><br><br> 
+    <br><br><br><br>  
     <script src="/js/header.js"></script> 

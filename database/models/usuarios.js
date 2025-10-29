@@ -22,6 +22,9 @@ module.exports = function(sequelize, dataTypes){
         imagen: {
             type: dataTypes.STRING
         },
+        admin: {
+            type: dataTypes.BOOLEAN
+        },
     }
     let config = {
         tableName: "usuarios",

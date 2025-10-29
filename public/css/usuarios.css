@@ -1,14 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&family=VT323&display=swap');
 *{
     box-sizing: border-box;
-    /*font-family: 'courier', cursive; elegante y */
-    /*font-family: 'Press Start 2P', cursive; no está mal para un titulo o una sección supongo*/
-    /*font-family: 'VT323', monospace; lo mismo pero más chiquito*/
-    font-family: 'Orbitron', sans-serif; /*ta buenaaaa*/
-    /*solución a bordes (para futuros proyectos ;v )*/
+    font-family: 'Orbitron', sans-serif; 
     margin: 0;
     padding: 0; 
-}
+} 
 .body{
     background-color: grey; 
     display:flex;
@@ -17,6 +13,9 @@
     background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg");
     background-position: center;
 }
+
+
+
 /*body principal*/
 .body2{
     width: 1140px; 
@@ -36,7 +35,6 @@
     align-items: center;
     justify-content: center;
     margin-top: 50px;
-    /*box-sizing: content-box;*/
     border-radius: 15px;
 }
 .cajaBorrar2{
@@ -76,6 +74,10 @@ cursor: pointer;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.fa-crown{
+    margin-top: 5px;
+    color: yellow;
 }
 .formularioSesion{
     align-items: center;

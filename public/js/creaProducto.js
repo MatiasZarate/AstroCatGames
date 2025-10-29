@@ -1,4 +1,5 @@
 window.addEventListener("load", function(){
+    /*const inicioSesion = */
     let formulario = document.getElementById("formularioCreaProducto");
 
     formulario.addEventListener("submit", function(e){

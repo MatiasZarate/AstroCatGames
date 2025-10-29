@@ -1,14 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&family=VT323&display=swap');
 *{
     box-sizing: border-box;
-    /*font-family: 'courier', cursive; elegante y */
-    /*font-family: 'Press Start 2P', cursive; no está mal para un titulo o una sección supongo*/
-    /*font-family: 'VT323', monospace; lo mismo pero más chiquito*/
-    font-family: 'Orbitron', sans-serif; /*ta buenaaaa*/
-    /*solución a bordes (para futuros proyectos ;v )*/
+    font-family: 'Orbitron', sans-serif; 
     margin: 0;
     padding: 0;
-} 
+}  
 .body{
     background-color: grey; 
     display:flex;
@@ -25,6 +21,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    color: black;
 }
 .imagenCentral{
     width: 450px;
@@ -69,7 +66,7 @@
     cursor: pointer;
 }*/
 .btnCategoria{
-width: 150px;
+    width: 150px;
     height: 35px;
     margin: 15px;
 }

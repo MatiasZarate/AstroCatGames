@@ -6,8 +6,8 @@
      <link rel="stylesheet" href="../../css/usuarios.css" >
      <script src="/js/lista.js" defer> </script>
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    </head>
-<body class="body"><div class="extra1"> 
+    </head> 
+<body class="body"><div>   <div class="extra1"> 
          <%- include("../partials/header") %>
           
     <div class="body2"><div class="cajaBorrar2"> 
@@ -18,12 +18,19 @@
      <div class="cuadradote perfilBtn" data-id="<%= listado[i].id %>">
         <img class="fotoDePerfil" src="<%= listado[i].imagen  %>">
         <h1><%= listado[i].nombre %></h1>
+        
+        <% if(listado[i].admin){%> 
+        <i class="fa-solid fa-crown"></i> 
+       <% } %>
+
     </div>
     <% } %>
     
 </div>
+</div>
 
 </div>
-</div><%- include("../partials/footer") %></div>
-   </div> </body>
+<%- include("../partials/footer") %>
+</div></div></div>
+</body>
 </html>

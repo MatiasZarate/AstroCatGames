@@ -9,7 +9,7 @@
 <body class="body"><div class="extra1"> 
          <%- include("../partials/header") %>
          
-    <div class="body2"><div class="cajaBorrar"> 
+    <div class="body2"><div class="cajaBorrar2"> 
     <h1>Editar</h1>
      <% if (locals.errors) { locals.errors.forEach(error=> { %>
                     <p>
@@ -21,16 +21,16 @@
     <ul></ul></div> 
     <br>  <form action="/usuarios/editar/<%= Editarusuario.id.toString()  %>?_method=PUT" method="POST"  id="formularioRegistro" class="formularioRegistro" enctype="multipart/form-data">
     <input type="text" placeholder="nombre de usuario" name="nombre" id="nombre" class="inputRegistro" value="<%= Editarusuario.nombre %>"><br><br>
-    <input type="password" placeholder="nueva contraseña" name="password" id="password" class="inputRegistro" value="<%= Editarusuario.password %>"><br><br>
+    <input type="password" name="password" id="password" class="inputRegistro" placeholder="Dejar vacío para mantener la misma contraseña"><br><br>
     <input type="email" placeholder="email" name="email" id="email" class="inputRegistro" value="<%= Editarusuario.email %>"><br><br>
     <input type="number" placeholder="edad" name="edad" id="edad" class="inputRegistro" value="<%= Editarusuario.edad %>"><br><br>
     <input type="file" placeholder="foto de perfil" name="imagen" id="imagen" class="inputRegistro"><br><br>
-    <button type="submit" class="buto butonn">crear cuenta</button></form>  
+    <button type="submit" class="buto butonn">editar</button></form>  
 </div> 
-    
+     
     
    
  </div><br><%- include("../partials/footer") %>
 </div>
-   </div> <script src="/js/register.js"> </script>  </body> 
+   </div> <script src="/js/Editarusuario.js"> </script>  </body> 
 </html> 

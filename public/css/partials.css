@@ -7,7 +7,16 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     display: flex;
     justify-content: space-around;
+    font-weight: 0 !important;
+} 
+
+/*main {
+  margin-top: 250px; 
 }
+body {
+  margin: 0;
+  padding: 0;
+}*/
 .fixed{
     position:fixed;
     width:100%;
@@ -16,6 +25,7 @@
 .fixed2{
     position: fixed;
     z-index: 10;
+    font-size: 20px;
     margin-top: 36px;
     margin-right: 500px;
 }
@@ -86,6 +96,8 @@
 }
 .titulo{
     margin-right: 15%;
+    font-size: 45px;
+    
 }
 .user{
     display: flex;
@@ -141,6 +153,7 @@
     border: solid 2px black;
     cursor: pointer;
     height: 40px;
+    font-size: 30px;
     /*border-radius: 15px;*/
     padding-left: 3px;
     padding-right: 3px;
@@ -167,7 +180,7 @@
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 2px solid black;
-
+    font-size: 25px !important;
 
 }
 .elemClose:hover{
@@ -179,9 +192,22 @@
    flex-direction: row;
    justify-content: center;
    background-color: gray;
-   
+   height: 30px;
    background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg");
 }
+.totalpuntos{
+    font-size: 25px;
+    color: black;
+}
+.valorTotal{
+    font-size: 25px;
+    font-weight: 1000 !important;
+    color: black;
+}
+.elemName{
+    color: black;
+}
+
 .totalidad{
  background-color: darkorchid;
  background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg");
@@ -190,7 +216,8 @@
 .finalizar{
     margin-top: 5px;
     margin-bottom: 4px;
-    width: 190px;
+    width: 200px;
+    font-size: 21px;
     margin-left: 135px;
     background-color: blueviolet;
     color: white;
@@ -200,7 +227,7 @@
 }
 .elemNum{
     font-weight: 800;
-}
+}/*eliminar si es necesario*/
 /*footer*/
 .footer{
     color:black;
@@ -244,3 +271,7 @@
     cursor:pointer;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+.header *{font-weight: normal;}
+.column *{font-weight: normal;}
+.carrito *{font-weight: normal;}
+.valorTotal * {font-weight: 500px !important; color:black !important;}

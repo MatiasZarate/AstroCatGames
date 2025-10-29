@@ -36,7 +36,7 @@ const controlador = {
     }},
     prueba: (req, res) =>{
         res.render("prueba") 
-    },
+    }, 
     listaUsuarios: async(req, res) =>{
         try{
             const listado = await db.usuarios.findAll();
@@ -170,13 +170,20 @@ const controlador = {
                         console.error("Error:", error);
                         res.status(500).send("Error al obtener los datos de la base de datos");
                       }
-    },
+    }, 
     editar2: async (req, res) => {
             try {               
               const Editarusuario = await db.usuarios.findByPk(req.params.id);
     if (Editarusuario){
+    let hashedPassword = Editarusuario.password
+
+    if (req.body.password && req.body.password.trim() !== "") {
+        hashedPassword = bcrypt.hashSync(req.body.password, 10);
+      }
+     
+
         Editarusuario.nombre = req.body.nombre,
-        Editarusuario.password= req.body.password,
+        Editarusuario.password= hashedPassword,
         Editarusuario.email= req.body.email,
         Editarusuario.edad= req.body.edad
 

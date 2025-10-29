@@ -20,6 +20,7 @@ window.addEventListener("load", function(){
     const countProductos = document.querySelector('.carritoCount')
     const fixed = document.querySelector('.fixed')
     const usuarioLogueado = fixed.dataset.user === 'true';
+    const usuarioLogueadoAdmin = fixed.dataset.userAdmin === 'true';
     /*let botonCerrar = */
       
     const showHtml = () =>{
@@ -33,7 +34,7 @@ window.addEventListener("load", function(){
             containerProduct.classList.add('addCart')
 
             containerProduct.innerHTML = ` 
-            <div class="productiño" data-id="${product.nombre}"><h4 class="elem"> ${ product.quantity } </h4><h4 class="elemName"> ${ product.nombre } </h4> <h4 class="elemNum"> ${ product.precio } </h4><h4 class="elemClose">X</h4></div>`
+            <div class="productiño" data-id="${product.nombre}"><h4 class="elem valorTotal"> ${ product.quantity } </h4><h4 class="elemName"> ${ product.nombre } </h4> <h4 class="elemNum valorTotal"> ${ product.precio } </h4><h4 class="elemClose">X</h4></div>`
             rowProduct.append(containerProduct)
             total = total + parseInt(product.quantity * product.precio)
             totalProducts = totalProducts + product.quantity;
@@ -53,13 +54,28 @@ window.addEventListener("load", function(){
         window.location.href = "/usuarios/registro";
     })
     lsitaUsuarios.addEventListener("click", function(){
+        if(usuarioLogueado && usuarioLogueadoAdmin){
         window.location.href = "/usuarios/listaUsuarios";
+        } else if (!usuarioLogueado){
+        alert("debes iniciar sesión primero")
+        } else {
+        alert("solo los administradores pueden entrar a esta página")
+        }
     })
     creaProducto.addEventListener("click", function(){
-        window.location.href = "/productos/creaProducto";
+        if(usuarioLogueado){
+            window.location.href = "/productos/creaProducto";
+        }else{
+            alert("debes iniciar sesión primero")
+        }
     })
     finalizar.addEventListener("click", function(){
-        alert("gracias por su compra")
+        alert("gracias por su compra") 
+        /*Swal.fire({
+        title: "Muchas gracias por su compra!!",
+        text: "That thing is still around?",
+        icon: "question"
+        });*/
         window.location.href = "/";
     })
     carritoIcon.addEventListener("click", function(){
