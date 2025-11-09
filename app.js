@@ -20,8 +20,10 @@ app.use(express.json());
 app.use(session({
     secret: "buizel",
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false/*,
+  cookie: { secure: false }*/
 })) 
+
 
 const multer = require("multer");
 

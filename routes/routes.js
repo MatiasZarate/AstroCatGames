@@ -101,4 +101,8 @@ router.get("/categorias/accesorios", homeController.accesorios);
 router.get("/categorias/merch", homeController.merch);
 router.get("/categorias/packs", homeController.packs);
 
+router.post("/agregar", homeController.agregarProducto);/*luego ver si esto no está de relleno*/ 
+router.get("/carrito", homeController.verCarrito);
+router.post("/eliminar", homeController.eliminarProducto);
+
 module.exports = router; 

@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
 }  
-.body{
+.body{ 
     background-color: grey; 
     display:flex;
     align-items: center;
@@ -154,6 +154,7 @@
     width: 90px !important;
 }
 .sr-only{
+    opacity: 10 !important;
     color: white;
 }
 /*carrusel pequeño bootstrap*/ 
@@ -198,6 +199,7 @@
 .nextyprev{
     height: 350px;
     width: 55px;
+    color:white;
 }
 .cuadradote2:hover{
 box-shadow: 0 10px 16px rgba(0,0,0,0.2), 0 10px 20px 0 rgb(0, 0, 0);

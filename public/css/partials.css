@@ -32,6 +32,16 @@ body {
 .fixed3{
    display: none; 
 }
+/*.listaUsuarios{
+    color: white;
+    background-color: grey;
+    border: solid 2px black;
+    cursor: pointer;
+    height: 40px;
+    font-size: 30px;
+    padding-left: 3px;
+    padding-right: 3px;
+}*/
 .perfilBtnn{
     display: flex;
     justify-content: center;
@@ -147,17 +157,48 @@ body {
     display: flex;
     justify-content: space-around;
 }
-.funcionalidad{
-    color: white;
+.uno{
+ color: white;
     background-color: grey;
     border: solid 2px black;
     cursor: pointer;
     height: 40px;
     font-size: 30px;
-    /*border-radius: 15px;*/
     padding-left: 3px;
     padding-right: 3px;
+    /*debo poner que se queden fija e inamovibles*/
+    position:absolute;
+    left: 7%;
 }
+.dos{
+ color: white;
+    background-color: grey;
+    border: solid 2px black;
+    cursor: pointer;
+    height: 40px;
+    font-size: 30px;
+    padding-left: 3px;
+    padding-right: 3px;
+    /*debo poner que se queden fija e inamovibles*/
+    position:absolute;
+    left: 43%;
+}
+.tres{
+ color: white;
+    background-color: grey;
+    border: solid 2px black;
+    cursor: pointer;
+    height: 40px;
+    font-size: 30px;
+    padding-left: 3px;
+    padding-right: 3px;
+    /*debo poner que se queden fija e inamovibles*/
+    position:absolute;
+    left: 72%;
+}
+/*.funcionalidad{
+    
+}*/
 .funcionalidad:hover, .registro:hover, .iniciosesion:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
@@ -270,6 +311,9 @@ body {
 .wazaa:hover,  .instaa:hover{ 
     cursor:pointer;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.my-custom-popup-border{
+    border: 6px solid black;;
 }
 .header *{font-weight: normal;}
 .column *{font-weight: normal;}

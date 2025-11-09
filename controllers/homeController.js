@@ -28,7 +28,10 @@ const controlador = {
         const productosUltimos = await db.productos.findAll({
     where: {cantidad: "1"}
     });
-      res.render("index", {listaProductos, productosUltimos, userLogged: req.session.userLogged})
+      
+      console.log("🧠 Carrito actual al cargar la vista:", req.session.carrito);
+      const carrito = req.session.carrito || [];
+      res.render("index", {listaProductos, productosUltimos, userLogged: req.session.userLogged, carrito})
         
     }catch (error) {
           console.error("Error:", error);
@@ -90,7 +93,7 @@ const controlador = {
       req.session.userLogged = userToLogin;
       
       return res.redirect("/")
-    }else{
+    }else/*error?*/{
       return res.render("usuarios/inicioSesion", {
         errors:{
           nombre:{msg: "La contraseña es invalida"}},
@@ -369,6 +372,58 @@ const controlador = {
           console.error("Error:", error);
           res.status(500).send("Error al obtener los datos de la base de datos");
         }
+    },
+    agregarProducto: (req, res) =>{
+      const producto = req.body;
+
+      if(!req.session.carrito){
+        req.session.carrito = [];
+        console.log("🆕 Nueva sesión iniciada, carrito creado vacío");
+      }
+
+      const { nombre, precio } = req.body;
+
+      const existente = req.session.carrito.find(p => p.nombre === nombre);
+
+      if (existente) {
+      existente.quantity++;
+      console.log("🔁 Producto ya existía, nueva cantidad:", existente.quantity);
+      } else {
+      req.session.carrito.push({
+      nombre,
+      precio,
+      quantity: 1
+    });
+    console.log("🛒 Producto agregado al carrito:", { nombre, precio });
+      }
+       req.session.save(err => {
+    if (err) console.error("Error guardando sesión:", err);
+    console.log("💾 Sesión guardada correctamente");
+
+    res.json({ ok: true, carrito: req.session.carrito });
+    console.log("📦 Enviando carrito desde sesión:", req.session.carrito);
+
+  });
+        /*req.session.save(() => {
+    res.json({ ok: true, carrito: req.session.carrito });
+  });*/
+      /*res.json({ carrito: req.session.carrito });*/
+  },
+  verCarrito: (req, res) => {
+  const carrito = req.session.carrito || [];
+  console.log("📦 Enviando carrito desde sesión:", carrito);
+  res.json({ carrito });
+},
+    eliminarProducto: (req, res) => {
+      const { nombre } = req.body;
+       if (req.session.carrito) {
+    // Filtra el producto fuera del carrito
+    req.session.carrito = req.session.carrito.filter(p => p.nombre !== nombre);
+  }
+       req.session.save(() => {
+    console.log("🗑 Producto eliminado:", nombre);
+    res.json({ ok: true, carrito: req.session.carrito });
+  });
     }
 }
 
