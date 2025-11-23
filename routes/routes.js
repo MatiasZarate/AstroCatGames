@@ -1,14 +1,14 @@
 const homeController = require('./../controllers/homeController');
 const express = require("express");
 const router = express.Router();
-const multer = require("multer")
+const multer = require("multer") /*para subir imagenes */
 const upload = multer({ dest: "uploads/" });
 
 const path = require("path");
-const {check} = require('express-validator');
-const { or } = require('sequelize');
+const {check} = require('express-validator'); /*para validar */
+const { or } = require('sequelize'); /*no lo usé, lol */
 
-
+/*validaciones backend */
 const validateRegister = [
     check("nombre")
     .notEmpty().withMessage("debes completar el nombre de usuario")
@@ -27,11 +27,11 @@ const validateRegister2 = [
     .isLength({min:1}).withMessage("no puede ser menor de 1"),
     check("categoria").notEmpty().withMessage("debes seleccionar una categoria")
 ];
+/*funciones para middlewares */
 function admin (req, res, next){
   if(req.session.userLogged && req.session.userLogged.admin === true){
         next();
         }else{
-         /*res.status(403).send("Acceso denegado. Inicie sesión en una cuenta con admin");*/
          res.redirect("/")
         }
 }
@@ -39,11 +39,10 @@ function session(req, res, next){
   if(req.session.userLogged ){
         next();
         }else{
-         /*res.status(403).send("Acceso denegado. Inicie sesión en una cuenta con admin");*/
          res.redirect("/")
         }
 }
-function sessionPerfil(req, res, next){
+function sessionPerfil(req, res, next){ /*function para verificar loggeo */
   const user = req.session.userLogged
 
         if(!user){
@@ -68,17 +67,12 @@ function editar(req, res, next){
         }
 }
 
-/*function guestMiddleware(req,res,next){
-  if(req.session.userLogged){
-    return res.redirect("/users/perfil")
-  }
-  next();
-}*/
-
 const uploadFile = multer();
  
 router.get("/", homeController.index);
 router.get("/prueba", homeController.prueba);
+
+/*usuarios */
 router.get("/usuarios/inicioSesion", homeController.inicioSesion);
 router.post("/usuarios/inicioSesion", homeController.inicioSesionDos);
 router.get("/usuarios/listaUsuarios", admin, homeController.listaUsuarios);
@@ -89,7 +83,9 @@ router.get("/usuarios/registro", homeController.registro);
 router.post("/usuarios/registro", upload.single('imagen'), validateRegister, homeController.postregistro);
 router.get("/usuarios/editar/:id", editar, homeController.editar);
 router.put("/usuarios/editar/:id", upload.single("imagen"), homeController.editar2);
-router.get("/productos/creaProducto", session,  homeController.creaProducto);
+
+/*productos */
+router.get("/productos/creaProducto", admin, homeController.creaProducto);
 router.post("/productos/creaProducto", upload.single('imagen'), validateRegister2, homeController.postCreaProducto);
 router.get("/productos/detalleProducto/:id", homeController.detalleProducto);
 router.delete("/productos/delete/:id", homeController.deleteProducto);
@@ -100,9 +96,12 @@ router.get("/categorias/consolas", homeController.consolas);
 router.get("/categorias/accesorios", homeController.accesorios);
 router.get("/categorias/merch", homeController.merch);
 router.get("/categorias/packs", homeController.packs);
+router.get("/productos/tarjeta", homeController.tarjeta)
 
-router.post("/agregar", homeController.agregarProducto);/*luego ver si esto no está de relleno*/ 
+/*carrito */
+router.post("/agregar", homeController.agregarProducto);/*posible relleno */
 router.get("/carrito", homeController.verCarrito);
 router.post("/eliminar", homeController.eliminarProducto);
+router.get("/finalizar", homeController.finalizarCarrito);
 
 module.exports = router; 

@@ -18,6 +18,7 @@ window.addEventListener("load", function(){
         }
         
 
+        /* si hay errores, no se sube, y manda para que salgan a la vista*/
         if(errores.length > 0){
             e.preventDefault();
             ulErrores = document.querySelector("div.errores ul")

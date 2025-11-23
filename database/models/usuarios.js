@@ -32,4 +32,4 @@ module.exports = function(sequelize, dataTypes){
     }
     let usuariosDB = sequelize.define(alias, cols, config);
     return usuariosDB
-}
+}/*los modelos de la tabla usuarios */

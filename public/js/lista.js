@@ -3,6 +3,7 @@ window.addEventListener("load", function(){
     let editarBtn = document.querySelectorAll(".editarBtn");
     let perfilBtn = document.querySelectorAll(".perfilBtn");
     
+    /*lo de siempre, envia el id del data a la siguiente vista */
     editarBtn.forEach((boton) => {
     boton.addEventListener("click", () => {
     let id = boton.getAttribute("data-id");

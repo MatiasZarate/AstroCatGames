@@ -1,13 +1,13 @@
-const fs = require("fs")
+const fs = require("fs") /*para escribir*/
 const path = require("path");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcryptjs"); /*para hasheo */
 const { validationResult } = require("express-validator");
-let db = require("../database/models");
+let db = require("../database/models"); /*los modelos de las base de datos */
 
-const cloudinary = require("cloudinary").v2;
+const cloudinary = require("cloudinary").v2; /*mi hermoso cloudinary */
 const streamifier = require("streamifier");
 
-          
+/*su no tan hermosa configuración */
 cloudinary.config({
   cloud_name: "dduyxqrqt",
   api_key: "867588739315874",
@@ -29,17 +29,17 @@ const controlador = {
     where: {cantidad: "1"}
     });
       
-      console.log("🧠 Carrito actual al cargar la vista:", req.session.carrito);
-      const carrito = req.session.carrito || [];
-      res.render("index", {listaProductos, productosUltimos, userLogged: req.session.userLogged, carrito})
+    res.render("index", {listaProductos, productosUltimos, userLogged: req.session.userLogged})/*envia todos estos para ser usados en la vista */
         
     }catch (error) {
           console.error("Error:", error);
-          res.status(500).send("Error al obtener los datos de la base de datos");
+          res.status(500).send("Error al obtener los datos de la base de datos");/*algún día hare una vista personalizada para cuando no conecta a la base de datos */
     }},
     prueba: (req, res) =>{
         res.render("prueba") 
     }, 
+
+    /*usuarios */
     listaUsuarios: async(req, res) =>{
         try{
             const listado = await db.usuarios.findAll();
@@ -51,7 +51,7 @@ const controlador = {
     },
     perfil: async (req, res) => { 
                         try {
-                          const listado = await db.usuarios.findByPk(req.params.id);
+                          const listado = await db.usuarios.findByPk(req.params.id); /*busca el id del usuario */
         
                   if(listado){
                         res.render("usuarios/perfil", {listado});
@@ -80,20 +80,18 @@ const controlador = {
     },
     inicioSesionDos: async(req,res)=>{
       try {
-      /*let user = db.usuarios;
-      let userToLogin = await user.findByField("nombre", req.body.nombre)*/
       const userToLogin = await db.usuarios.findOne({
       where: { nombre: req.body.nombre }
       });
      
      if(userToLogin){
-    let isOkiDoky = await bcrypt.compare(req.body.password, userToLogin.password);
+    let isOkiDoky = await bcrypt.compare(req.body.password, userToLogin.password); 
     if(isOkiDoky){
-      delete userToLogin.password;
-      req.session.userLogged = userToLogin;
+      delete userToLogin.password; 
+      req.session.userLogged = userToLogin; /*para que se mantenga el mismo hash */
       
       return res.redirect("/")
-    }else/*error?*/{
+    }else{
       return res.render("usuarios/inicioSesion", {
         errors:{
           nombre:{msg: "La contraseña es invalida"}},
@@ -123,9 +121,9 @@ const controlador = {
            
            if (!errors.isEmpty()){
             return res.render("usuarios/registro", { errors: errors.array() })
-           }
+           }/*validación */
                 
-                try { 
+                try {  /*hasheo y foto predeterminada si no hay .file */
                 let hashedPassword = bcrypt.hashSync(req.body.password, 10);
                 let imagen = 'https://res.cloudinary.com/dduyxqrqt/image/upload/v1755726525/pfpDefault_nia0sd.jpg';
 
@@ -134,7 +132,7 @@ const controlador = {
         const result = await cloudinary.uploader.upload(req.file.path);
         imagen = result.secure_url;
      
-
+      /*borrar la imagen que se sube a upload */
       fs.unlink(req.file.path, (err) => {
         if (err) {
           console.error("Error al borrar el archivo local:", err);
@@ -151,7 +149,7 @@ const controlador = {
                 email,
                 edad,
                 imagen
-            });
+            });/*creación usuario */
 
             console.log("usuario registrado correctamente");
             res.redirect("/");
@@ -182,7 +180,7 @@ const controlador = {
 
     if (req.body.password && req.body.password.trim() !== "") {
         hashedPassword = bcrypt.hashSync(req.body.password, 10);
-      }
+      }/*para que se guarde el mismo hash */
      
 
         Editarusuario.nombre = req.body.nombre,
@@ -194,7 +192,7 @@ const controlador = {
         const result = await cloudinary.uploader.upload(req.file.path);
         Editarusuario.imagen = result.secure_url;
     }
-        await Editarusuario.save();
+        await Editarusuario.save();/*se guarda :v */
         res.redirect("/usuarios/listaUsuarios")
     }else{
         res.send("fallo al editar :(")
@@ -203,6 +201,8 @@ const controlador = {
     console.error("Error:", error);
     res.status(500).send("Error al editar los datos en la base de datos");
   }},
+
+  /*productos */
    creaProducto: (req, res)=> {
    res.render("productos/creaProducto");
    },
@@ -214,7 +214,6 @@ const controlador = {
            }
                 
                 try { 
-                    console.log("BODY:", req.body)
                 let imagen = 'https://res.cloudinary.com/dduyxqrqt/image/upload/v1758029127/jj6kt2ltwhja5qtrhulx.png';
 
 
@@ -268,7 +267,7 @@ const controlador = {
             const deleteProducto = await db.productos.findByPk(req.params.id);
 
         if(deleteProducto){
-            await deleteProducto.destroy();
+            await deleteProducto.destroy();/*busca el producto y lo destruye >:v */
             res.redirect("/");
         }} catch (error) {
           console.error("Error:", error);
@@ -288,9 +287,6 @@ const controlador = {
                         console.error("Error:", error);
                         res.status(500).send("Error al obtener los datos de la base de datos");
                       }
-                
-    
- 
     },
   editarProducto2:async (req, res) => {
             try {
@@ -298,12 +294,12 @@ const controlador = {
                 console.log("file", req.file);
               
               const editarProducto = await db.productos.findByPk(req.params.id);
-    if (editarProducto){
+    if (editarProducto){/*para que aparezcan todos los valores */
         editarProducto.nombre = req.body.nombre,
         editarProducto.descripcion = req.body.descripcion
         editarProducto.precio = req.body.precio
         editarProducto.cantidad = req.body.cantidad
-        editarProducto.categoria = req.body.categoria
+        editarProducto.categoria = req.body.categoria/*got you*/ /*no anda correctamente */
 
     if(req.file){
         const result = await cloudinary.uploader.upload(req.file.path);
@@ -321,7 +317,7 @@ const controlador = {
   videojuegos: async(req, res) =>{
         try{
             const listadoProductos = await db.productos.findAll({
-              where: {categoria:"juegos"}
+              where: {categoria:"juegos"} /*filtra por categoria */
             });
             res.render("categorias/videojuegos", { listadoProductos })
         }catch (error) {
@@ -373,12 +369,16 @@ const controlador = {
           res.status(500).send("Error al obtener los datos de la base de datos");
         }
     },
+    tarjeta: (req, res) =>{
+    res.render("productos/tarjeta")
+    },
+
+    /*carrito */
     agregarProducto: (req, res) =>{
       const producto = req.body;
 
-      if(!req.session.carrito){
+      if(!req.session.carrito){ /*guarda en session */
         req.session.carrito = [];
-        console.log("🆕 Nueva sesión iniciada, carrito creado vacío");
       }
 
       const { nombre, precio } = req.body;
@@ -386,44 +386,39 @@ const controlador = {
       const existente = req.session.carrito.find(p => p.nombre === nombre);
 
       if (existente) {
-      existente.quantity++;
-      console.log("🔁 Producto ya existía, nueva cantidad:", existente.quantity);
+      existente.quantity++;/*si existe le aumenta el valor */
       } else {
-      req.session.carrito.push({
+      req.session.carrito.push({ /*si no, lo añade al carro */
       nombre,
       precio,
       quantity: 1
     });
-    console.log("🛒 Producto agregado al carrito:", { nombre, precio });
+   /* console.log(" Producto agregado al carrito:", { nombre, precio });*/
       }
        req.session.save(err => {
     if (err) console.error("Error guardando sesión:", err);
-    console.log("💾 Sesión guardada correctamente");
 
     res.json({ ok: true, carrito: req.session.carrito });
-    console.log("📦 Enviando carrito desde sesión:", req.session.carrito);
 
   });
-        /*req.session.save(() => {
-    res.json({ ok: true, carrito: req.session.carrito });
-  });*/
-      /*res.json({ carrito: req.session.carrito });*/
   },
-  verCarrito: (req, res) => {
-  const carrito = req.session.carrito || [];
-  console.log("📦 Enviando carrito desde sesión:", carrito);
-  res.json({ carrito });
+   verCarrito: (req, res) => { /*abre el carro */
+    const carrito = req.session.carrito || [];
+    res.json({ carrito });
 },
-    eliminarProducto: (req, res) => {
+   eliminarProducto: (req, res) => {
       const { nombre } = req.body;
        if (req.session.carrito) {
-    // Filtra el producto fuera del carrito
-    req.session.carrito = req.session.carrito.filter(p => p.nombre !== nombre);
+       // Filtra el producto fuera del carrito
+      req.session.carrito = req.session.carrito.filter(p => p.nombre !== nombre);
   }
-       req.session.save(() => {
-    console.log("🗑 Producto eliminado:", nombre);
+    req.session.save(() => { /*guarda el carro luego de eliminar dx */
     res.json({ ok: true, carrito: req.session.carrito });
   });
+    },
+   finalizarCarrito: (req, res) => {
+    req.session.carrito = []; /*vaciarlo */
+    res.redirect("/")
     }
 }
 

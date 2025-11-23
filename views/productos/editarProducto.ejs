@@ -22,13 +22,14 @@
 <form action="/productos/editarProducto/<%= editarProducto.id.toString()%>?_method=PUT" method="POST" id="formularioCreaProducto" class="formularioRegistro" enctype="multipart/form-data">
     <input type="text" placeholder="nombre del producto" name="nombre" id="nombre" class="inputProducto" value="<%= editarProducto.nombre %>"><br><br>
     <label for="categorias" class="label"> Categoria </label>
-        <select name="categoria" id="categoria" value="<%= editarProducto.categoria %>">
+        <select name="categoria" id="categoria" >
         <option value="juegos"> Videojuego </option>
         <option value="consolas"> Consola </option>
         <option value="accesorios"> Accesorios </option>
         <option value="merch"> Merch </option>
         <option value="packs"> Packs </option> 
     </select><br><br>
+
     <input type="text" placeholder="descripcion del prod." name="descripcion" id="descripcion" class="inputProducto" value="<%= editarProducto.descripcion %>"><br><br>
     <input type="number" placeholder="precio" name="precio" id="precio" class="inputProducto" value="<%= editarProducto.precio %>"><br><br>
     <input type="number" placeholder="cantidad" name="cantidad" id="cantidad" class="inputProducto" value="<%= editarProducto.cantidad %>"><br><br>

@@ -12,7 +12,7 @@
          
     <div class="body2"><div class="cajaBorrar22"> 
           
-
+<!--toma los datos del usuario dado-->
         <h1 class="nombre"> <%= listado.nombre %></h1>
         <img class="fotoDePerfil" src="<%= listado.imagen %>">
         <div class="botones"><button class="bonot editarBtn" data-id="<%= listado.id %>">editar</button> <form action="/usuarios/delete/<%= listado.id %>?_method=DELETE" method="POST"><button class="bonot">borrar</button></form></div><br>

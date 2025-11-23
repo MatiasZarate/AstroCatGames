@@ -25,4 +25,4 @@ module.exports = {
     "port": process.env.DB_PORT,
     "dialect":process.env.dbDialect
   }
-}
+}/*la configuración, pidiendo los datos del env */

@@ -21,7 +21,6 @@
 .body2{
     width: 1140px; 
     display: flex;
-   /* align-items: center;*/
     justify-content: center;
     flex-direction: column;
 }
@@ -79,14 +78,8 @@ box-shadow: 0 10px 16px black, 0 10px 20px 0 black;
  display: flex;
  width: 230px;
  justify-content: center;
- flex-wrap: wrap;/*haz algo para que no supere el limite*/
+ flex-wrap: wrap;
 }
-/*.precio{
- font-size: 35px;
-}
-.cantidad{
-
-}*/
 .buto{
     font-size: 15px;
     width: 160px;

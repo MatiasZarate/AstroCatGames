@@ -11,7 +11,7 @@ window.addEventListener("load", function(){
         let contraseña = document.getElementById("contraseña")
         if(contraseña.value == ""){
             errorres.push("el campo de contraseña no puede estar vacio")
-        } 
+        } /*verificación frontend */
 
          if(errorres.length > 0){
             e.preventDefault();

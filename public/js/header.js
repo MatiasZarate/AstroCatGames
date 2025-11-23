@@ -3,6 +3,7 @@ window.addEventListener("load", function(){
     let inicioSesion = document.getElementById("inicioSesion")
     let registro = document.getElementById("registro")
     let carritoBtn = document.getElementById("carritoIcon")
+    let tarjeta = document.getElementById("tarjeta")
     let lsitaUsuarios = document.getElementById("listaUsuarios")
     let creaProducto = document.getElementById("creaProducto")
     let carritoIcon = document.getElementById("carritoIcon")
@@ -21,11 +22,10 @@ window.addEventListener("load", function(){
     const fixed = document.querySelector('.fixed')
     const usuarioLogueado = fixed.dataset.user === 'true';
     const usuarioLogueadoAdmin = fixed.dataset.userAdmin === 'true';
-    /*let botonCerrar = */
     
     
 
-    const showHtml = () =>{
+    const showHtml = () =>{ /*muestra el carrito */
         rowProduct.innerHTML = "";
 
         let total = 0;
@@ -60,18 +60,16 @@ window.addEventListener("load", function(){
   } catch (err) {
     console.error("Error al cargar carrito:", err);
   }
-})();
+})(); /*que carajos*/
 
     logo.addEventListener("click", function(){
-       /* alert("me an tocao");*/
     window.location.href="/"
-        
-
     })
+
     inicioSesion.addEventListener("click", function(){
-        if(usuarioLogueado){
+        if(usuarioLogueado){ /* verifica que el usuario este logueado, sino, lo manda a logearse por pssy */
         Swal.fire({
-        title: "Deslogueate si quieres iniciar sesión nuevamente",
+        title: "Deslogueate si quieres iniciar sesión en otra cuenta",
         draggable: true,
         background: "url('https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg')",
         confirmButtonColor:"purple",
@@ -84,19 +82,19 @@ window.addEventListener("load", function(){
             window.location.href = "/usuarios/inicioSesion";
         }     
     })
+
     registro.addEventListener("click", function(){
         window.location.href = "/usuarios/registro";
     })
-
     
     if (!usuarioLogueadoAdmin) {
     // Oculta el botón si el usuario NO es admin
     lsitaUsuarios.style.display = "none";
-    }
+    }/*no se que hace acá D: */
     
 
     lsitaUsuarios.addEventListener("click", function(){
-        if(usuarioLogueado && usuarioLogueadoAdmin){
+        if(usuarioLogueado && usuarioLogueadoAdmin){ /*oculta si no tienes admin, y no te deja entrar */
         window.location.href = "/usuarios/listaUsuarios";
         } else if (!usuarioLogueado){
         Swal.fire({
@@ -109,18 +107,17 @@ window.addEventListener("load", function(){
             popup: 'my-custom-popup-border'
         },
         });
-        } /*else {
-        listaUsuarios.classList.toggle('carrote')
-        }*/
+        } 
     })
 
     
-
+    /*tarjeta.addEventListener("click", function(){
+    window.location.href="/productos/tarjeta"
+    })*/
     creaProducto.addEventListener("click", function(){
         if(usuarioLogueado){
             window.location.href = "/productos/creaProducto";
         }else{
-            /*alert("debes iniciar sesión primero")*/
         Swal.fire({
         title: "Debes iniciar sesión primero",
         draggable: true,
@@ -134,29 +131,30 @@ window.addEventListener("load", function(){
         }
     })
     finalizar.addEventListener("click", function(){
-        /*alert("gracias por su compra") */
         Swal.fire({
         title: "MUCHAS GRACIAS POR SU COMPRA!!",
-        /*draggable: true,*/
+        /*draggable: true, sirve para que se pueda agarrar así bien loko*/
         background: "url('https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg')",
         confirmButtonColor:"purple",
         color: "black",
-        /*timer: 10000,*/
+        /*timer: 10000, tiempo para que se cierre solo*/
         showConfirmButton: false,
-        imageUrl: "https://res.cloudinary.com/dduyxqrqt/image/upload/v1762457776/Cat_Shoppingcartt_a2wmg4.png",
+        /*imageUrl: "https://res.cloudinary.com/dduyxqrqt/image/upload/v1762457776/Cat_Shoppingcartt_a2wmg4.png", imagen personalizada ig*/
         customClass: {
             popup: 'my-custom-popup-border'
         },
         });
+
         setTimeout(function() {
-        window.location.href = "/";
-        }, 2000);/*luego cuando añada el session en el carrito lo modificare para que no sea solo 5 segundos de ver al gato y ya*/ 
+        window.location.href = "/finalizar";
+        }, 2000); 
     })
     carritoIcon.addEventListener("click", function(){
         fixed2.classList.toggle('carrote')
     })
     perfilBtnnId.addEventListener("click", function(){
         if(!usuarioLogueado){
+            console.log("aaaaaaaaa")
         Swal.fire({
         title: "Debes iniciar sesión primero",
         draggable: true,
@@ -168,10 +166,11 @@ window.addEventListener("load", function(){
         },
         });
         }else{
+            console.log("aaaaaaaaaa")
         fixed3.classList.toggle('perfilBtnn')
         } 
     })
-    /*tecnicamente debería borrar el if en esos 2 siguientes*/
+    /*tecnicamente podría borrar el if en esos 2 siguientes*/ 
     botonesPerfilHeader.addEventListener("click", function(){
        
         if(usuarioLogueado){
@@ -189,7 +188,8 @@ window.addEventListener("load", function(){
             alert("debes iniciar sesión primero")
         }
     })
-    agregar.forEach((boton) => {
+
+    agregar.forEach((boton) => { /*agrega los productos al carrito*/
          boton.addEventListener("click", function() {
         let id = boton.getAttribute("data-id");
 
@@ -197,16 +197,16 @@ window.addEventListener("load", function(){
             quantity: 1,
             nombre : boton.getAttribute("data-name"),
             precio : boton.getAttribute("data-price")
-        }
+        } /*almacena toda la info del producto */
     
-        const exist = allProducts.some(product => product.nombre === infoProduct.nombre)
+        const exist = allProducts.some(product => product.nombre === infoProduct.nombre) /*la manda al carro */
         
         if (exist){
-          const products = allProducts.map(product => {
+          const products = allProducts.map(product => { /*si existe le suma cantidad, sino lo añade */
             if(product.nombre === infoProduct.nombre){
                 product.quantity++;
             return product
-           /* req.session.products = infoProduct;*/
+           
         }else{
             return product
             }
@@ -220,7 +220,7 @@ window.addEventListener("load", function(){
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(infoProduct)
-        });
+        }); /*lo escribe */
 
         showHtml()
     })
@@ -231,15 +231,8 @@ window.addEventListener("load", function(){
     const productElement = e.target.parentElement;
     const nombre = productElement.getAttribute('data-id'); 
 
-    /*allProducts = allProducts.filter(item => item.nombre !== id);*/
     allProducts = allProducts.filter(item => item.nombre !== nombre);
-    showHtml();
-
-    /*console.log("Producto eliminado:", id);
-    console.log("Carrito actualizado:", allProducts);*/
-    /*console.log(req.session.product)*/
-
-    /*showHtml();*/
+    showHtml(); /*elimina el producto al tocar la x */
      try {
       await fetch("/eliminar", {
         method: "POST",

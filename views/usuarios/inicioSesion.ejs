@@ -11,13 +11,13 @@
          
     <div class="body2"><div class="cajaBorrar"> 
     <h1>Inicio de sesión</h1><br>
-     <% if (locals.errors && errors.nombre) { %>
+     <% if (locals.errors && errors.nombre) { %> <!--backend-->
              <div> 
                 <%= errors.nombre.msg %>
              </div>
     <% } %> 
     <div class="errorres">
-    <ul></ul></div>
+    <ul></ul></div> <!--frontend-->
     <br>
     <form action="/usuarios/inicioSesion" method="POST" id="formularioSesion" class="formularioSesion">
     <input type="text" placeholder="nombre de usuario" id="nombre" class="nombre inputSesion" name="nombre" value="<%= locals.old && old.nombre %>"><br><br>

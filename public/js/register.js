@@ -20,7 +20,7 @@ window.addEventListener("load", function(){
         if(edad.value == ""){
             errores.push("el campo de edad no puede estar vacio")
         }
-        
+        /*verificación frontend */
 
         if(errores.length > 0){
             e.preventDefault();

@@ -1,6 +1,6 @@
 window.addEventListener("load", function(){
     let editarBtn = document.querySelectorAll(".editarBtn");
-
+    /*localiza el id seleccionado y lo usa en la vista */
     editarBtn.forEach((boton) => {
     boton.addEventListener("click", () => {
     let id = boton.getAttribute("data-id");

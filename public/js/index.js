@@ -9,7 +9,7 @@ window.addEventListener("load", function(){
     perfilBtn.forEach((boton) => {
     boton.addEventListener("click", () => {
     let id = boton.getAttribute("data-id");
-    window.location.href = "/productos/detalleProducto/" + id;
+    window.location.href = "/productos/detalleProducto/" + id; /*envia el id para ser usado en el perfil */
     });
     });
     videojuegosBtn.forEach((boton) => {

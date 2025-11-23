@@ -17,8 +17,8 @@ window.addEventListener("load", function(){
 })
  wazaa.addEventListener("click", function(){
        window.open("https://wa.me/5493624934018?text=hola, quiero info del negocio", "_blank", "noopener,noreferrer");
-    })
+    }) /*sirve para redirigir a un whatsapp, y el text para queel usuario tenga un mensaje predeterminado para mandar */
  instaa.addEventListener("click", function(){
         window.open("https://www.instagram.com/axl.orosco/", "_blank", "noopener,noreferrer");
-    }) 
+    })  /*nooponer noreferrer es para que no se abra una ventana extra mientras abres el link externo */
 })

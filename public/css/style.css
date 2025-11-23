@@ -27,9 +27,6 @@
     width: 450px;
     height: 350px;
 }
-/*.principalUno, .principalDos, .principalTres, .principalCuatro, .principalCinco{
- cursor: pointer !important; 
-}*/
 .banner{
     width: 1350px;
     height: 370px;
@@ -45,10 +42,6 @@
     margin-left: 10px;
     text-align: center;
 }
-/*.superponganse{
-    align-items: center;
-    justify-content: center;
-}*/
 .categorias{
     display: flex;
     justify-content: center;
@@ -61,10 +54,6 @@
     flex-direction: row;
     justify-content: space-around;
 }
-/*.btn1, .btn2, .btn3, .btn4, .btn5{
-    
-    cursor: pointer;
-}*/
 .btnCategoria{
     width: 150px;
     height: 35px;
@@ -73,7 +62,7 @@
 .btn1:hover, .btn2:hover, .btn3:hover, .btn4:hover, .btn5:hover{
     box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     color: whitesmoke;
-    background-color: /*blueviolet*/ darkmagenta /*purple*/;
+    background-color:  darkmagenta;
 }
 .titular{
     padding-left: 5px;
@@ -159,9 +148,9 @@
 }
 /*carrusel pequeño bootstrap*/ 
 .productos3{
-   /* background-color: */ color: white;
+    color: white;
     width: 1351px; 
-    /*color:*/ background-color:  #800080;
+    background-color:  #800080;
     background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1759324707/8fc57cdbfa254eb4b604bc4d1ffee0ab_lindkk.jpg");
     
 }
@@ -192,9 +181,14 @@
     width: 1150px;
 }
 .numeritos{
-    /*color: black;*/
     color: black;
-    margin-bottom: 1px;
+    
+    justify-content: center;
+}
+.dolares{
+    font-size: 30px;
+    display: grid;
+    place-items: center;
 }
 .nextyprev{
     height: 350px;
@@ -220,7 +214,6 @@ box-shadow: 0 10px 16px rgba(0,0,0,0.2), 0 10px 20px 0 rgb(0, 0, 0);
 
 .agregar{
     background-color: silver;
-    /*background-color: gray !important;*/
     color: black;
     margin-bottom: 10px;
 }
@@ -229,10 +222,6 @@ box-shadow: 0 10px 16px rgba(0,0,0,0.2), 0 10px 20px 0 rgb(0, 0, 0);
     background-color: purple !important;
     color: white;
 }
-/*.agregar:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  background-color: blueviolet;
-}*/ /*no me convence, mejor que quede así*/
 
 .carousel-fade .carousel-item {
   opacity: 0;
@@ -255,7 +244,6 @@ box-shadow: 0 10px 16px rgba(0,0,0,0.2), 0 10px 20px 0 rgb(0, 0, 0);
   height: 310px; 
   box-sizing: border-box;
   overflow: hidden;
-  /*background-color: silver;*/
   background-color: silver;
   color: black;
   border: solid 5px purple;

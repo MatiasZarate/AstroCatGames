@@ -32,4 +32,4 @@ module.exports = function(sequelize, dataTypes){
     }
     let productosDB = sequelize.define(alias, cols, config);
     return productosDB
-}
+}/*los modelos de la tabla productos */

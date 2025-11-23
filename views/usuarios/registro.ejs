@@ -11,16 +11,16 @@
          
     <div class="body2"><div class="cajaBorrar2"> 
     <br><h1>Registro</h1>
-     <% if (locals.errors) { locals.errors.forEach(error=> { %>
+     <% if (locals.errors) { locals.errors.forEach(error=> { %> <!-- errores backend -->
                     <p>
                         <%= error.msg %>
                     </p>
                     <% }) } %>
  
      <div class="errores">
-    <ul></ul></div>  
+    <ul></ul></div>  <!-- errores frontend-->
     <br><form action="/usuarios/registro" method="POST"  id="formularioRegistro" class="formularioRegistro" enctype="multipart/form-data">
-    <input type="text" placeholder="nombre de usuario" name="nombre" id="nombre" class="inputRegistro" value="<%= locals.old && old.nombre %>"><br><br>
+    <input type="text" placeholder="nombre de usuario" name="nombre" id="nombre" class="inputRegistro" value="<%= locals.old && old.nombre %>"><br><br> <!--locals es para recordar el valor si falla-->
     <input type="password" placeholder="contraseña" name="password" id="password" class="inputRegistro" value="<%= locals.old && old.password %>"><br><br>
     <input type="email" placeholder="email" name="email" id="email" class="inputRegistro" value="<%= locals.old && old.email %>"><br><br>
     <input type="number" placeholder="edad" name="edad" id="edad" class="inputRegistro" value="<%= locals.old && old.edad %>"><br><br>
@@ -28,7 +28,7 @@
     <button type="submit" class="buto butonn">crear cuenta</button></form>  
 </div> 
     
-    
+
    
  </div><br><%- include("../partials/footer") %>
 </div>

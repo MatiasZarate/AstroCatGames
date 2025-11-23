@@ -20,7 +20,6 @@
 .body2{
     width: 1140px; 
     display: flex;
-   /* align-items: center;*/
     justify-content: center;
     flex-direction: column;
 }
@@ -109,13 +108,11 @@ cursor: pointer;
     height: 35px;
     margin-left: 150px;
     margin-bottom: 50px;
-    /*background-image: url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg");*/
 }
 .buto{
     font-size: 20px;
     width: 250px;
     height: 35px;
-    /*margin-left: 150px;*/
     margin-bottom: 50px;
 }
 .butonn:hover, .buto:hover{
@@ -143,4 +140,18 @@ cursor: pointer;
 }
 .errores{
     margin-left:170px;
+}
+
+/*tarjetas*/
+.tarjetas{
+    display: flex;
+    flex-direction: row;
+}
+.tarjeta{
+    width: 120px;
+    height: 80px;
+}
+.tarjetaa{
+    width: 140px;
+    height: 90px;
 }

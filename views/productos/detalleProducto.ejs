@@ -9,13 +9,18 @@
     </head>
 <body class="body"><div class="extra1"> 
          <%- include("../partials/header") %>
-          
+           
     <div class="body2"><div class="cajaBorrar3"> 
-          
+    
         <div class="ibANDnnb"> 
         <div class="imagenybotones"><img class="fotoDePerfil" src="<%= detalleProducto.imagen %>">
+
+        <% if (userLogged && userLogged.admin) { %>
         <div class="botonesHermanos botones"><button class="bonot editarBtn" data-id="<%= detalleProducto.id %>">editar</button> <form action="/productos/delete/<%= detalleProducto.id %>?_method=DELETE" method="POST"><button class="bonot" type="submit">borrar</button></form></div></div>      
-        
+        <% } else { %>
+        <div class="botonesHermanos botones hidden"><button class="bonot editarBtn" data-id="<%= detalleProducto.id %>">editar</button> <form action="/productos/delete/<%= detalleProducto.id %>?_method=DELETE" method="POST"><button class="bonot" type="submit">borrar</button></form></div></div>
+        <% } %> 
+
         <div class="nombreNumerosyBoton"><h1 class="nombre"> <%= detalleProducto.nombre %></h1>
         <div class="numeros"><h2 class="numero">$ <%= detalleProducto.precio %></h2><br><h2 >disponibles: <%= detalleProducto.cantidad %></h2></div>
         <button class="bonotCompra agregar" data-id="<%= detalleProducto.id %>" data-name="<%= detalleProducto.nombre %>" data-price="<%= detalleProducto.precio %>"><h2> añadir al carrito</h2></button> 
@@ -23,7 +28,7 @@
    
  
  
-
+<br>
 </div><br><%- include("../partials/footer") %>
 </div></div>
    </div> </body>
