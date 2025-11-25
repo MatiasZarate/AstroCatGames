@@ -16,9 +16,9 @@
         <div class="imagenybotones"><img class="fotoDePerfil" src="<%= detalleProducto.imagen %>">
 
         <% if (userLogged && userLogged.admin) { %>
-        <div class="botonesHermanos botones"><button class="bonot editarBtn" data-id="<%= detalleProducto.id %>">editar</button> <form action="/productos/delete/<%= detalleProducto.id %>?_method=DELETE" method="POST"><button class="bonot" type="submit">borrar</button></form></div></div>      
+        <div class="botonesHermanos botones"><button class="bonot editarBtn" data-id="<%= detalleProducto.id %>">editar</button> <button class="bonot ofertaBtn" data-id="<%= detalleProducto.id %>">oferta</button> <form action="/productos/delete/<%= detalleProducto.id %>?_method=DELETE" method="POST"><button class="bonot" type="submit">borrar</button></form></div></div>      
         <% } else { %>
-        <div class="botonesHermanos botones hidden"><button class="bonot editarBtn" data-id="<%= detalleProducto.id %>">editar</button> <form action="/productos/delete/<%= detalleProducto.id %>?_method=DELETE" method="POST"><button class="bonot" type="submit">borrar</button></form></div></div>
+        <div class="botonesHermanos botones hidden"><button class="bonot editarBtn" data-id="<%= detalleProducto.id %>">editar</button> <button class="bonot ofertaBtn" data-id="<%= detalleProducto.id %>">oferta</button> <form action="/productos/delete/<%= detalleProducto.id %>?_method=DELETE" method="POST"><button class="bonot" type="submit">borrar</button></form></div></div>
         <% } %> 
 
         <div class="nombreNumerosyBoton"><h1 class="nombre"> <%= detalleProducto.nombre %></h1>

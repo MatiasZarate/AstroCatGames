@@ -10,39 +10,53 @@
          <%- include("../partials/header") %> 
          
     <div class="body2"><div class="cajaBorrar2"> 
-    <h1>Sube tu metodo de pago para comprar productos </h1>
+    <h1>Selecciona tu metodo de pago </h1>
     <%  if (locals.errors) { locals.errors.forEach(error=> { %>
                     <p>
                         <%= error.msg %>
                     </p>
                     <% }) } %>
 
-     <div class="errores"> 
+     <div class="errores2"> 
     <ul></ul><br></div> 
-     <div class="tarjetas"> 
-    <img class="tarjeta" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1763903393/masterKaard_v9zgic.png">
-    <img class="tarjeta" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1763906625/visaaa_cbzxct.png">
-    <img class="tarjeta" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1763906645/mercadoPaago_cqjxin.png">
+    <form id="selector_tarjetas"> <div class="tarjetas"> 
+    <div class="imgYbtn"> <img class="tarjeta" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1763903393/masterKaard_v9zgic.png">
+    <input type="radio" name="pago" value="mastercard" checked></div>
+    <div class="imgYbtn"><img class="tarjeta" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1763906625/visaaa_cbzxct.png">
+    <input type="radio" name="pago" value="visa"></div>
+    <div class="imgYbtn"><img class="tarjeta" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1763906645/mercadoPaago_cqjxin.png">
+    <input type="radio" name="pago" value="mp"></div>
+    </div></form><br>
+    
+    <div id="formulario-mastercard" class="formulario_tarjeta"> 
+    <form action="/finalizar"  method="get" id="formularioMC" class="formularioRegistro" enctype="multipart/form-data">
+    <input type="text" placeholder="nombre del titular de la mastercard" name="nombre" id="nombre" class="inputProducto" ><br><br>
+    <input type="text" placeholder="numero de la tarjeta" name="numeroTar" id="numeroTar" maxlength="16" inputmode="numeric" class="inputProducto" ><br><br>
+    <input type="date" placeholder="fecha de caducidad" name="caducidad" id="caducidad" class="inputProducto"><br><br>
+    <input type="text" placeholder="codigo de seguridad" name="seguridad" id="seguridad" maxlength="3" inputmode="numeric" class="inputProducto"><br><br>
+    <button type="submit" class="butonn">finalizar compra</button><br></form>
     </div>
-    <form action="/productos/creaProducto" method="POST" id="formularioCreaProducto" class="formularioRegistro" enctype="multipart/form-data">
-    <input type="text" placeholder="nombre del producto" name="nombre" id="nombre" class="inputProducto" ><br><br>
-    <label for="categorias" class="label"> Categoria </label>
-        <select name="categoria" class="label" id="categoria">
-        <option value="juegos"> Videojuego </option>
-        <option value="consolas"> Consola </option>
-        <option value="accesorios"> Accesorios </option>
-        <option value="merch"> Merch </option>
-        <option value="packs"> Packs </option> 
-    </select><br><br>
-    <input type="text" placeholder="descripcion del prod." name="descripcion" id="descripcion" class="inputProducto" ><br><br>
-    <input type="number" placeholder="precio" name="precio" id="precio" class="inputProducto" ><br><br>
-    <input type="number" placeholder="cantidad" value="1" name="cantidad" id="cantidad" class="inputProducto"><br><br>
-    <input type="file" placeholder="imagen del prod." name="imagen" id="imagen" class="inputProducto"><br><br>
-    <button type="submit" class="butonn">crear producto</button><br></form>
-    
-    
-   
+    <div id="formulario-visa" class="formulario_tarjeta" style="display:none">
+        <form action="/finalizar" method="get" id="formularioVS" class="formularioRegistro" enctype="multipart/form-data">
+    <input type="text" placeholder="nombre del titular de la mastercard" name="nombre" id="nombre2" class="inputProducto" ><br><br>
+    <input type="text" placeholder="numero de la tarjeta" name="numeroTar" id="numeroTar2" maxlength="16" inputmode="numeric" class="inputProducto" ><br><br>
+    <input type="date" placeholder="fecha de caducidad" name="caducidad" id="caducidad2" class="inputProducto"><br><br>
+    <input type="text" placeholder="codigo de seguridad" name="seguridad" id="seguridad2" maxlength="3" inputmode="numeric" class="inputProducto"><br><br>
+    <button type="submit" class="butonn">finalizar compra</button><br></form>
+    </div>
+
+    <div id="mp" class="formulario_tarjeta" style="display:none">
+        <form action="/finalizar" method="get" id="formularioMP" class="formularioRegistro" enctype="multipart/form-data"> <div class="mp"> 
+        <div class="qr"><h1> paga con qr</h1>
+        <br><img src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1763994625/qr_jpedyj.png"></div><br>
+        <div class="cvu"><h1> paga con alias o cvu </h1>
+        <br><h2 style="color: purple;"> Alias: astro.kat.games</h2>
+        <br><h2 style="color: purple;"> CVU: 73492374892734923</h2></div></div>
+       <div class="finalizarYboton"><br> <div class="muchasClass"> <input type="checkbox" id="verif" class="verif" required><h3>pago realizado</h3></div>
+        <button type="submit" class="butonn finalizarr">finalizar compra</button></div></form>
+    </div>
+
  </div><br><br>
 </div><%- include("../partials/footer") %>
-   </div>  <script src="/js/creaProducto.js"> </script>  </body> 
+   </div>  <script src="/js/tarjeta.js"> </script>  </body> 
 </html>

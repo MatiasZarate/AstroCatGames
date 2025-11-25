@@ -131,23 +131,32 @@ window.addEventListener("load", function(){
         }
     })
     finalizar.addEventListener("click", function(){
-        Swal.fire({
+        if (allProducts.length > 0){
+           /*Swal.fire({
         title: "MUCHAS GRACIAS POR SU COMPRA!!",
-        /*draggable: true, sirve para que se pueda agarrar así bien loko*/
         background: "url('https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg')",
         confirmButtonColor:"purple",
         color: "black",
-        /*timer: 10000, tiempo para que se cierre solo*/
         showConfirmButton: false,
-        /*imageUrl: "https://res.cloudinary.com/dduyxqrqt/image/upload/v1762457776/Cat_Shoppingcartt_a2wmg4.png", imagen personalizada ig*/
+        customClass: {
+            popup: 'my-custom-popup-border'
+        },
+        }); */
+       /*setTimeout(function() {*/
+        window.location.href = "/productos/tarjeta";
+        /*}, 2000);  */
+        }else{
+        Swal.fire({
+        title: "no hay productos en el carrito",
+        draggable: true,
+        background: "url('https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg')",
+        confirmButtonColor:"purple",
+        color: "black",
         customClass: {
             popup: 'my-custom-popup-border'
         },
         });
-
-        setTimeout(function() {
-        window.location.href = "/finalizar";
-        }, 2000); 
+        }  
     })
     carritoIcon.addEventListener("click", function(){
         fixed2.classList.toggle('carrote')

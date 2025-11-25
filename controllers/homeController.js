@@ -359,7 +359,7 @@ const controlador = {
         }
     },
     packs: async(req, res) =>{
-        try{
+        try{ 
             const listadoProductos = await db.productos.findAll({
               where: {categoria:"packs"}
             });
