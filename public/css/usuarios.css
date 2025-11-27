@@ -102,11 +102,19 @@ cursor: pointer;
 .label{
     font-size: 20px;
 }
+
 .butonn{
     font-size: 20px;
     width: 250px;
     height: 35px;
     margin-left: 150px;
+    margin-bottom: 50px;
+}
+.butonnn{
+    font-size: 20px;
+    width: 250px;
+    height: 35px;
+    
     margin-bottom: 50px;
 }
 .buto{

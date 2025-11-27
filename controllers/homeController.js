@@ -20,6 +20,8 @@ const { where } = require("sequelize");
 const controlador = {
     index: async(req, res) => {
     try{
+  const { Op } = require('sequelize');
+
         const listado = await db.usuarios.findByPk(req.params.id);
 
         const listaProductos = await db.productos.findAll({
@@ -28,8 +30,22 @@ const controlador = {
         const productosUltimos = await db.productos.findAll({
     where: {cantidad: "1"}
     });
+        const productosEconomicos = await db.productos.findAll({
+      where: {
+                precio: {
+                  [Op.lt]: 50000 
+                }
+            }
+    });
+        const productosEnOferta = await db.productos.findAll({
+            where: {
+                ofertas: {
+                  [Op.ne]: null 
+                }
+            }
+        });
       
-    res.render("index", {listaProductos, productosUltimos, userLogged: req.session.userLogged})/*envia todos estos para ser usados en la vista */
+    res.render("index", {listaProductos, productosUltimos, productosEconomicos, productosEnOferta, userLogged: req.session.userLogged})/*envia todos estos para ser usados en la vista */
         
     }catch (error) {
           console.error("Error:", error);
@@ -314,6 +330,55 @@ const controlador = {
     console.error("Error:", error);
     res.status(500).send("Error al editar los datos en la base de datos");
   }},
+  oferta: async (req, res) => { 
+                        try {
+                          const oferta = await db.productos.findByPk(req.params.id);
+        
+                  if(oferta){
+                        res.render("productos/oferta", {oferta});
+                    }else{
+                        res.send("no se encontró al producto :(")
+                    } 
+                } catch (error) {
+                        console.error("Error:", error);
+                        res.status(500).send("Error al obtener los datos de la base de datos");
+                      }
+    },
+  oferta2:async (req, res) => {
+            try {
+                console.log("BODY:", req.body);
+              
+              const oferta = await db.productos.findByPk(req.params.id);
+    if (oferta){/*para que aparezcan todos los valores */
+        /*oferta.precio = req.body.precio*/
+        oferta.ofertas = req.body.oferta
+
+        await oferta.save();
+        res.redirect("/")
+    }else{
+        res.send("fallo al editar :(")
+    } 
+} catch (error) {
+    console.error("Error:", error);
+    res.status(500).send("Error al editar los datos en la base de datos");
+  }},
+  deleteOferta: async(req, res)=>{
+        try{
+        const productoConOferta = await db.productos.findByPk(req.params.id); 
+
+        if (productoConOferta) {
+            productoConOferta.ofertas = null; // O 0, si ese es tu valor predeterminado.
+
+            await productoConOferta.save();
+            return res.redirect("/");
+        } else {
+            return res.status(404).send("Producto no encontrado para eliminar la oferta."); 
+        }
+    } catch (error) {
+          console.error("Error:", error);
+          res.status(500).send("Error al eliminar los datos de la base de datos");
+        }
+},
   videojuegos: async(req, res) =>{
         try{
             const listadoProductos = await db.productos.findAll({
@@ -375,13 +440,13 @@ const controlador = {
 
     /*carrito */
     agregarProducto: (req, res) =>{
-      const producto = req.body;
+      const /*producto = req.body;*/ { nombre, precio, ofertas } = req.body;
 
       if(!req.session.carrito){ /*guarda en session */
         req.session.carrito = [];
       }
 
-      const { nombre, precio } = req.body;
+      /*const { nombre, precio } = req.body;*/
 
       const existente = req.session.carrito.find(p => p.nombre === nombre);
 
@@ -389,10 +454,12 @@ const controlador = {
       existente.quantity++;/*si existe le aumenta el valor */
       } else {
       req.session.carrito.push({ /*si no, lo añade al carro */
-      nombre,
-      precio,
-      quantity: 1
-    });
+          nombre,
+          precio,
+          // 💡 CORRECCIÓN 2: Guardar el valor de la oferta (será null o el precio de oferta)
+          ofertas, 
+          quantity: 1
+        });
    /* console.log(" Producto agregado al carrito:", { nombre, precio });*/
       }
        req.session.save(err => {

@@ -24,7 +24,7 @@ window.addEventListener("load", function(){
     const usuarioLogueadoAdmin = fixed.dataset.userAdmin === 'true';
     
     
-
+ 
     const showHtml = () =>{ /*muestra el carrito */
         rowProduct.innerHTML = "";
 
@@ -34,11 +34,35 @@ window.addEventListener("load", function(){
         allProducts.forEach((product) =>{
             const containerProduct = document.createElement('div')
             containerProduct.classList.add('addCart')
-
-            containerProduct.innerHTML = ` 
+            
+            if (usuarioLogueado) {
+               if(product.ofertas){
+                containerProduct.innerHTML = ` 
+            <div class="productiño" data-id="${product.nombre}"><h4 class="elem valorTotal"> ${ product.quantity } </h4><h4 class="elemName"> ${ product.nombre } </h4> <h4 class="elemNum valorTotal"> ${ product.ofertas } </h4><h4 class="elemClose">X</h4></div>`
+               }else{
+                containerProduct.innerHTML = ` 
             <div class="productiño" data-id="${product.nombre}"><h4 class="elem valorTotal"> ${ product.quantity } </h4><h4 class="elemName"> ${ product.nombre } </h4> <h4 class="elemNum valorTotal"> ${ product.precio } </h4><h4 class="elemClose">X</h4></div>`
+               }
+            }else{
+                containerProduct.innerHTML = ` 
+            <div class="productiño" data-id="${product.nombre}"><h4 class="elem valorTotal"> ${ product.quantity } </h4><h4 class="elemName"> ${ product.nombre } </h4> <h4 class="elemNum valorTotal"> ${ product.precio } </h4><h4 class="elemClose">X</h4></div>`
+            }
+            
+            
+            
             rowProduct.append(containerProduct)
-            total = total + parseInt(product.quantity * product.precio)
+
+            if (usuarioLogueado) {
+            if(product.ofertas){
+                total = total + parseInt(product.quantity * product.ofertas)
+            }else{
+                total = total + parseInt(product.quantity * product.precio)
+            }
+            }else{
+                total = total + parseInt(product.quantity * product.precio)
+            }
+
+
             totalProducts = totalProducts + product.quantity;
         })
     valorTotal.innerText = `$${total}`
@@ -46,21 +70,29 @@ window.addEventListener("load", function(){
     }
 
     (async () => {
-  try {
-    const res = await fetch("/carrito");
-    const data = await res.json();
+  try {
+    const res = await fetch("/carrito");
+    const data = await res.json();
 
-    if (data.carrito && data.carrito.length > 0) {
-      console.log("🧾 Carrito cargado desde sesión:", data.carrito);
-      allProducts = data.carrito;
-      showHtml(); // actualiza la vista del carrito
-    } else {
-      console.log("🧾 Carrito vacío o no encontrado en sesión.");
-    }
-  } catch (err) {
-    console.error("Error al cargar carrito:", err);
-  }
-})(); /*que carajos*/
+    if (data.carrito && data.carrito.length > 0) {
+      // 🚨 ESTA ES LA NORMALIZACIÓN CLAVE QUE DEBE ESTAR EN TU HEADER.JS 🚨
+      allProducts = data.carrito.map(product => ({
+        ...product,
+        // Convierte la oferta a número > 0 o a null si no es válida.
+        ofertas: (product.ofertas && parseFloat(product.ofertas) > 0) ? parseFloat(product.ofertas) : null,
+        // Convierte el precio a número
+        precio: parseFloat(product.precio)
+      }));
+      
+      console.log("🧾 Carrito normalizado:", allProducts);
+      showHtml(); // actualiza la vista del carrito
+    } else {
+      console.log("🧾 Carrito vacío o no encontrado en sesión.");
+    }
+  } catch (err) {
+    console.error("Error al cargar carrito:", err);
+  }
+})();
 
     logo.addEventListener("click", function(){
     window.location.href="/"
@@ -201,13 +233,19 @@ window.addEventListener("load", function(){
     agregar.forEach((boton) => { /*agrega los productos al carrito*/
          boton.addEventListener("click", function() {
         let id = boton.getAttribute("data-id");
+        const precioStr = boton.getAttribute("data-price");
+        const ofertaStr = boton.getAttribute("data-ofertas");
+
+       
 
         const infoProduct = {
             quantity: 1,
             nombre : boton.getAttribute("data-name"),
-            precio : boton.getAttribute("data-price")
+            precio : parseFloat(precioStr),
+            ofertas : (ofertaStr && ofertaStr !== "0") ? parseFloat(ofertaStr) : null 
         } /*almacena toda la info del producto */
     
+        console.log("Objeto guardado en infoProduct:", infoProduct);
         const exist = allProducts.some(product => product.nombre === infoProduct.nombre) /*la manda al carro */
         
         if (exist){

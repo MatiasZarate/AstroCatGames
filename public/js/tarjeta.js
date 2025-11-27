@@ -32,6 +32,8 @@ window.addEventListener("load", function(){
         })}
         
         formularioMC.addEventListener("submit", function(e){
+        
+        
         let errores = [];
 
         let nombre = document.getElementById("nombre")
@@ -62,6 +64,12 @@ window.addEventListener("load", function(){
              
             }
         }
+        
+        
+        
+        
+        
+        
     })
     
     formularioVS.addEventListener("submit", function(e){

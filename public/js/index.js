@@ -5,6 +5,7 @@ window.addEventListener("load", function(){
     let accesoriosBtn = document.querySelectorAll(".btn3");
     let merchBtn = document.querySelectorAll(".btn4");
     let packsBtn = document.querySelectorAll(".btn5");
+    const botonesAgregarNo = document.querySelectorAll(".agregarNo");
 
     perfilBtn.forEach((boton) => {
     boton.addEventListener("click", () => {
@@ -37,4 +38,18 @@ window.addEventListener("load", function(){
     window.location.href = "/categorias/packs";
     });
     });
+    botonesAgregarNo.forEach(boton => {
+    boton.addEventListener("click", function(){
+        Swal.fire({
+        title: "debes iniciar sesión para acceder a las ofertas",
+        draggable: true,
+        background: "url('https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg')",
+        confirmButtonColor:"purple",
+        color: "black",
+        customClass: {
+            popup: 'my-custom-popup-border'
+        },
+        });
+    })
+    })
 })

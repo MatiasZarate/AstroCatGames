@@ -22,8 +22,18 @@
         <% } %> 
 
         <div class="nombreNumerosyBoton"><h1 class="nombre"> <%= detalleProducto.nombre %></h1>
+         
+        <% if (userLogged) { %>
+        <% if(detalleProducto.ofertas){ %>
+        <div class="numeros"><h2 class="numero">$ <%= detalleProducto.ofertas %></h2><br><h2 >disponibles: <%= detalleProducto.cantidad %></h2></div>
+        <%  }else{ %>
         <div class="numeros"><h2 class="numero">$ <%= detalleProducto.precio %></h2><br><h2 >disponibles: <%= detalleProducto.cantidad %></h2></div>
-        <button class="bonotCompra agregar" data-id="<%= detalleProducto.id %>" data-name="<%= detalleProducto.nombre %>" data-price="<%= detalleProducto.precio %>"><h2> añadir al carrito</h2></button> 
+        <%   } %>
+        <% } else { %>
+         <div class="numeros"><h2 class="numero">$ <%= detalleProducto.precio %></h2><br><h2 >disponibles: <%= detalleProducto.cantidad %></h2></div>
+        <% } %> 
+
+        <button class="bonotCompra agregar" data-id="<%= detalleProducto.id %>" data-name="<%= detalleProducto.nombre %>" data-price="<%= detalleProducto.precio %>" data-ofertas="<%= detalleProducto.ofertas %>"><h2> añadir al carrito</h2></button> 
         <h2 class="descripción"> <%= detalleProducto.descripcion %></h2></div> </div><br> 
    
  

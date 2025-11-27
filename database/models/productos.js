@@ -25,6 +25,9 @@ module.exports = function(sequelize, dataTypes){
         categoria: {
             type: dataTypes.STRING
         },
+        ofertas: {
+            type: dataTypes.INTEGER
+        }
     }
     let config = {
         tableName: "productos",

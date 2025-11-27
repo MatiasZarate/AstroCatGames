@@ -91,12 +91,15 @@ router.get("/productos/detalleProducto/:id", homeController.detalleProducto);
 router.delete("/productos/delete/:id", homeController.deleteProducto);
 router.get("/productos/editarProducto/:id", homeController.editarProducto);
 router.put("/productos/editarProducto/:id", upload.single('imagen'), homeController.editarProducto2);
+router.get("/productos/oferta/:id", homeController.oferta);
+router.put("/productos/oferta/:id", homeController.oferta2);
 router.get("/categorias/videojuegos", homeController.videojuegos);
 router.get("/categorias/consolas", homeController.consolas);
 router.get("/categorias/accesorios", homeController.accesorios);
 router.get("/categorias/merch", homeController.merch);
 router.get("/categorias/packs", homeController.packs);
 router.get("/productos/tarjeta", homeController.tarjeta)
+router.delete("/productos/oferta/delete/:id", homeController.deleteOferta);
 
 /*carrito */
 router.post("/agregar", homeController.agregarProducto);/*posible relleno */

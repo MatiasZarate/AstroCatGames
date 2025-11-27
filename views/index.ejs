@@ -64,10 +64,20 @@
     <h2><%= listaProductos[j].nombre %></h2>
               <img class="d-block perfilBtn" data-id="<%= listaProductos[j].id %>" src="<%= listaProductos[j].imagen %>" width="200" height="150">
               <div class="numeritos">
+                
+                <% if (userLogged) { %>
+                <% if(!listaProductos[j].ofertas){ %>
                 <h5 class="dolares">$ <%= listaProductos[j].precio %> </h5>
+                <%  }else{ %> 
+                 <div class="ofertaTatcher"><h6 class="dolares">$ <%= listaProductos[j].ofertas %></h6><h6 ><del>$ <%= listaProductos[j].precio %> </del></h6></div>
+                <%   } %>
+                <% } else { %>
+                  <h5 class="dolares">$ <%= listaProductos[j].precio %> </h5>
+                <% } %>  
+   </div>
                 <h5><%= listaProductos[j].cantidad %> disponibles</h5>
-              </div>
-              <button class="agregar" data-id="<%= listaProductos[j].id %>" data-name="<%= listaProductos[j].nombre %>" data-price="<%= listaProductos[j].precio %>"> Agregar al carrito</button>
+              
+              <button class="agregar" data-id="<%= listaProductos[j].id %>" data-name="<%= listaProductos[j].nombre %>" data-price="<%= listaProductos[j].precio %>" data-ofertas="<%= listaProductos[j].ofertas %>"> Agregar al carrito</button>
             </div>
           <% } %></div></div></div><% } %></div>
 
@@ -97,10 +107,20 @@
     <h2><%= productosUltimos[j].nombre %></h2>
               <img class="d-block perfilBtn" data-id="<%= productosUltimos[j].id %>" src="<%= productosUltimos[j].imagen %>" width="200" height="150">
               <div class="numeritos">
-                <h5 class="dolares">$ <%= productosUltimos[j].precio %></h5>
+                
+              <% if (userLogged) { %>
+                <% if(!listaProductos[j].ofertas){ %>
+                <h5 class="dolares">$ <%= listaProductos[j].precio %> </h5>
+                <%  }else{ %>
+                 <div class="ofertaTatcher"><h6 class="dolares">$ <%= listaProductos[j].ofertas %></h6><h6 ><del>$ <%= listaProductos[j].precio %> </del></h6></div>
+                <%   } %>
+                <% } else { %>
+                  <h5 class="dolares">$ <%= listaProductos[j].precio %> </h5>
+                <% } %> 
+</div>
                 <h5><%= productosUltimos[j].cantidad %> disponibles</h5>
-              </div>
-              <button class="agregar" data-id="<%= productosUltimos[j].id %>" data-name="<%= productosUltimos[j].nombre %>" data-price="<%= productosUltimos[j].precio %>"> Agregar al carrito</button>
+              
+              <button class="agregar" data-id="<%= productosUltimos[j].id %>" data-name="<%= productosUltimos[j].nombre %>" data-price="<%= productosUltimos[j].precio %>" data-ofertas="<%= listaProductos[j].ofertas %>"> Agregar al carrito</button>
             </div>
           <% } %></div></div></div><% } %></div>
 
@@ -122,21 +142,31 @@
 <div id="carouselFour" class="carousel slide carousel-fade" data-bs-ride="carousel"><div class="carousel-inner"> <div class="carousel-alargatexfa">
 
 
-    <% for (let i = 0; i < listaProductos.length; i += 4) { %>
+    <% for (let i = 0; i < productosEconomicos.length; i += 4) { %>
       <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
       <div class="carousel-itemm">
       <div class="d-flex productoCarrito" >
 
-    <% for (let j = i; j < i + 4 && j < listaProductos.length; j++) { %>
+    <% for (let j = i; j < i + 4 && j < productosEconomicos.length; j++) { %>
       <div class="cuadradote2 m-2 ">
 
-    <h2><%= listaProductos[j].nombre %></h2>
-              <img class="d-block perfilBtn" data-id="<%= listaProductos[j].id %>" src="<%= listaProductos[j].imagen %>" width="200" height="150">
+    <h2><%= productosEconomicos[j].nombre %></h2>
+              <img class="d-block perfilBtn" data-id="<%= productosEconomicos[j].id %>" src="<%= productosEconomicos[j].imagen %>" width="200" height="150">
               <div class="numeritos">
-                <h5 class="dolares">$ <%= listaProductos[j].precio %></h5>
-                <h5><%= listaProductos[j].cantidad %> disponibles</h5>
-              </div>
-              <button class="agregar" data-id="<%= listaProductos[j].id %>" data-name="<%= listaProductos[j].nombre %>" data-price="<%= listaProductos[j].precio %>"> Agregar al carrito</button>
+
+                <% if (userLogged) { %>
+                <% if(!productosEconomicos[j].ofertas){ %>
+                <h5 class="dolares">$ <%= productosEconomicos[j].precio %> </h5>
+                <%  }else{ %>
+                 <div class="ofertaTatcher"><h6 class="dolares">$ <%= productosEconomicos[j].ofertas %></h6><h6 ><del>$ <%= productosEconomicos[j].precio %> </del></h6></div>
+                <%   } %>
+                <% } else { %>
+                  <h5 class="dolares">$ <%= productosEconomicos[j].precio %> </h5>
+                <% } %> 
+</div>
+                <h5><%= productosEconomicos[j].cantidad %> disponibles</h5>
+              
+              <button class="agregar" data-id="<%= productosEconomicos[j].id %>" data-name="<%= productosEconomicos[j].nombre %>" data-price="<%= productosEconomicos[j].precio %>" data-ofertas="<%= productosEconomicos[j].ofertas %>"> Agregar al carrito</button>
             </div>
           <% } %></div></div></div><% } %></div>
 
@@ -146,6 +176,56 @@
   <span class="sr-only">Previous</span>
 </button>
 <button class="carousel-control-next nextyprev" type="button" data-bs-target="#carouselFour" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>  
+  <span class="sr-only">Next</span>
+</button>
+</div></div></div></div>
+<br><div class="productos3"> <h1 class="titular"> Productos con ofertas!!</h1> <div class="productos4"> 
+<div id="carouselFive" class="carousel slide carousel-fade" data-bs-ride="carousel"><div class="carousel-inner"> <div class="carousel-alargatexfa">
+
+
+    <% for (let i = 0; i < productosEnOferta.length; i += 4) { %>
+      <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+      <div class="carousel-itemm">
+      <div class="d-flex productoCarrito" >
+
+    <% for (let j = i; j < i + 4 && j < productosEnOferta.length; j++) { %>
+      <div class="cuadradote2 m-2 ">
+
+    <h2><%= productosEnOferta[j].nombre %></h2>
+
+              <% if (userLogged) { %>
+              <img class="d-block perfilBtn" data-id="<%= productosEnOferta[j].id %>" src="<%= productosEnOferta[j].imagen %>" width="200" height="150">
+              <% } else { %>
+              <img  src="<%= productosEnOferta[j].imagen %>" width="200" height="150">
+              <%   } %>
+              
+              <div class="numeritos">
+
+            
+                <% if(!productosEnOferta[j].ofertas){ %>
+                <h5 class="dolares">$ <%= productosEnOferta[j].precio %> </h5>
+                <%  }else{ %>
+                 <div class="ofertaTatcher"><h6 class="dolares">$ <%= productosEnOferta[j].ofertas %></h6><h6 ><del>$ <%= productosEnOferta[j].precio %> </del></h6></div>
+                <%   } %>
+                
+</div>
+                <h5><%= productosEnOferta[j].cantidad %> disponibles</h5>
+              
+              <% if (userLogged) { %>
+              <button class="agregar" data-id="<%= productosEnOferta[j].id %>" data-name="<%= productosEnOferta[j].nombre %>" data-price="<%= productosEnOferta[j].precio %>" data-ofertas="<%= productosEnOferta[j].ofertas %>"> Agregar al carrito</button>
+              <% } else { %>
+              <button class="agregarNo" id="agregarNo"> Agregar al carrito</button>
+              <%   } %>
+            </div>
+          <% } %></div></div></div><% } %></div>
+
+<!--carrusel-->
+<button class="carousel-control-prev nextyprev" type="button" data-bs-target="#carouselFive" data-bs-slide="prev">    
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>  
+  <span class="sr-only">Previous</span>
+</button>
+<button class="carousel-control-next nextyprev" type="button" data-bs-target="#carouselFive" data-bs-slide="next">
   <span class="carousel-control-next-icon" aria-hidden="true"></span>  
   <span class="sr-only">Next</span>
 </button>

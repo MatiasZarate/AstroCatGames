@@ -186,7 +186,7 @@
     justify-content: center;
 }
 .dolares{
-    font-size: 30px;
+    font-size:25px; /*30px;*/
     display: grid;
     place-items: center;
 }
@@ -222,6 +222,16 @@ box-shadow: 0 10px 16px rgba(0,0,0,0.2), 0 10px 20px 0 rgb(0, 0, 0);
     background-color: purple !important;
     color: white;
 }
+.agregarNo{
+    background-color: silver;
+    color: black;
+    margin-bottom: 10px;
+}
+.agregarNo:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: purple !important;
+    color: white;
+}
 
 .carousel-fade .carousel-item {
   opacity: 0;
@@ -248,4 +258,9 @@ box-shadow: 0 10px 16px rgba(0,0,0,0.2), 0 10px 20px 0 rgb(0, 0, 0);
   color: black;
   border: solid 5px purple;
   background-image:url("https://res.cloudinary.com/dduyxqrqt/image/upload/v1752363693/silver-metallic-background-free-photo_oqg363.jpg");
+}
+.ofertaTatcher{
+    display: flex;
+    flex-direction: row;
+
 }

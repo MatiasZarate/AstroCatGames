@@ -20,9 +20,19 @@
      <div class="cuadradote " data-id="<%= listadoProductos[i].id %>">
         <img class="fotoDePerfil perfilBtn" data-id="<%= listadoProductos[i].id %>" src="<%= listadoProductos[i].imagen  %>">
         <h1 class="nombre"><%= listadoProductos[i].nombre %></h1> 
+
+        <% if (userLogged) { %>
+            <% if(listadoProductos[i].ofertas){ %>
+        <h3><del> $ <%= listadoProductos[i].precio %></del></h3> <h2>$ <%= listadoProductos[i].ofertas %></h2>
+            <%  }else{ %>
         <h2>$ <%= listadoProductos[i].precio %></h2>
+            <%   } %>   
+        <% } else { %>
+        <h2>$ <%= listadoProductos[i].precio %></h2>
+        <% } %>     
+
         <h3><%= listadoProductos[i].cantidad %> disponibles</h3>
-        <button class="agregar buto" data-id="<%= listadoProductos[i].id %>" data-name="<%= listadoProductos[i].nombre %>" data-price="<%= listadoProductos[i].precio %>"> agregar al carrito </button>
+        <button class="agregar buto" data-id="<%= listadoProductos[i].id %>" data-name="<%= listadoProductos[i].nombre %>" data-price="<%= listadoProductos[i].precio %>" data-ofertas="<%= listadoProductos[i].ofertas %>"> agregar al carrito </button>
     </div><% } %>
     <% } else{ %>
     <div class="cuadradote noProducts">
