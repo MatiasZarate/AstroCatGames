@@ -10,14 +10,15 @@
          <%- include("../partials/header") %> 
          
     <div class="body2"><div class="cajaBorrar2"> 
-    <h1>Selecciona tu metodo de pago </h1>
+    <h1 id="tituloTonto">Selecciona tu metodo de pago </h1>
+    <div class="losDosMetodos">  <div class="metodoPago" id="metodoPago"> 
     <%  if (locals.errors) { locals.errors.forEach(error=> { %>
                     <p>
                         <%= error.msg %>
                     </p>
-                    <% }) } %>
+                    <% }) } %> 
 
-     <div class="errores2"> 
+    <div class="errores3"> 
     <ul></ul><br></div> 
     <form id="selector_tarjetas"> <div class="tarjetas"> 
     <div class="imgYbtn"> <img class="tarjeta" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1763903393/masterKaard_v9zgic.png">
@@ -27,36 +28,61 @@
     <div class="imgYbtn"><img class="tarjeta" src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1763906645/mercadoPaago_cqjxin.png">
     <input type="radio" name="pago" value="mp"></div>
     </div></form><br>
+
     
     <div id="formulario-mastercard" class="formulario_tarjeta"> 
-    <form action="/finalizar"  method="get" id="formularioMC" class="formularioRegistro" enctype="multipart/form-data">
+    <form action="/"  method="get" id="formularioMC" class="formularioRegistro" enctype="multipart/form-data">
     <input type="text" placeholder="nombre del titular de la mastercard" name="nombre" id="nombre" class="inputProducto" ><br><br>
     <input type="text" placeholder="numero de la tarjeta" name="numeroTar" id="numeroTar" maxlength="16" inputmode="numeric" class="inputProducto" ><br><br>
     <input type="date" placeholder="fecha de caducidad" name="caducidad" id="caducidad" class="inputProducto"><br><br>
     <input type="text" placeholder="codigo de seguridad" name="seguridad" id="seguridad" maxlength="3" inputmode="numeric" class="inputProducto"><br><br>
-    <button type="submit" class="butonn">finalizar compra</button><br></form>
-    </div>
+    <button type="submit" class="butonn siguiente">siguiente</button></form></div>
+    
     <div id="formulario-visa" class="formulario_tarjeta" style="display:none">
-        <form action="/finalizar" method="get" id="formularioVS" class="formularioRegistro" enctype="multipart/form-data">
-    <input type="text" placeholder="nombre del titular de la mastercard" name="nombre" id="nombre2" class="inputProducto" ><br><br>
+    <form action="/" method="get" id="formularioVS" class="formularioRegistro" enctype="multipart/form-data">
+    <input type="text" placeholder="nombre del titular de la visa" name="nombre" id="nombre2" class="inputProducto" ><br><br>
     <input type="text" placeholder="numero de la tarjeta" name="numeroTar" id="numeroTar2" maxlength="16" inputmode="numeric" class="inputProducto" ><br><br>
     <input type="date" placeholder="fecha de caducidad" name="caducidad" id="caducidad2" class="inputProducto"><br><br>
     <input type="text" placeholder="codigo de seguridad" name="seguridad" id="seguridad2" maxlength="3" inputmode="numeric" class="inputProducto"><br><br>
-    <button type="submit" class="butonn">finalizar compra</button><br></form>
-    </div>
+    <button type="submit" class="butonn siguiente">siguiente</button></form></div>
+    
 
     <div id="mp" class="formulario_tarjeta" style="display:none">
-        <form action="/finalizar" method="get" id="formularioMP" class="formularioRegistro" enctype="multipart/form-data"> <div class="mp"> 
+        <form action="/" method="get" id="formularioMP" class="formularioRegistro" enctype="multipart/form-data"> <div class="mp"> 
         <div class="qr"><h1> paga con qr</h1>
         <br><img src="https://res.cloudinary.com/dduyxqrqt/image/upload/v1763994625/qr_jpedyj.png"></div><br>
         <div class="cvu"><h1> paga con alias o cvu </h1>
         <br><h2 style="color: purple;"> Alias: astro.kat.games</h2>
-        <br><h2 style="color: purple;"> CVU: 73492374892734923</h2></div></div>
-       <div class="finalizarYboton"><br> <div class="muchasClass"> <input type="checkbox" id="verif" class="verif" required><h3>pago realizado</h3></div>
-        <button type="submit" class="butonn finalizarr">finalizar compra</button></div></form>
+        <br><h2 style="color: purple;"> CVU: 73492374892734923</h2></div></div><br>
+        <div class="finalizarYboton"><br><div class="muchasClass"> <input type="checkbox" id="verif" class="verif" required><h3>pago realizado</h3></div>
+        <button type="submit" class="butonn siguiente yaMeQuieroIr">siguiente</button></div></form></div>
     </div>
 
- </div><br><br>
+     <div class="envio" style="display:none" id="envio">
+     
+    <h1> Escoge como recibir el producto</h1><br>
+    <div class="ultimoultimo" id="selector_envio">
+        
+    <div class="ultimoultimoultimo"> <input type="radio" name="envio" value="domicilio" class="radioultimo" checked><h3>envio a domicilio</h3></div>
+    <div class="ultimoultimoultimo"><input type="radio" name="envio" value="local" class="radioultimo"><h3>retiro del local</h3></div></div>
+    <br>
+    <div class="ultimasPreguntas" id="formulario_domicilio">
+    <form action="/finalizar" method="get"> <br>
+    <input type="text" placeholder="Provincia" name="nombre" id="provincia_domicilio" class="inputProducto" required><br><br>
+    <input type="text" placeholder="Dirección" name="nombre" id="direccion_domicilio" class="inputProducto" required><br><br>
+    <br><button type="submit" class="butonn finalizarr">finalizar compra</button></form>
+    </div> <br>
+
+    <div class="ultimaDirección" id="direccion_local" style="display: none;">
+    <form action="/finalizar" method="get"> 
+    <div class="hdp"> <h2>Dirección: </h2><h2 style="color: purple; margin-left: 5px;">Santa Maria de Oro 999</h2></div>
+    <div class="hdp"> <h2>Horario: </h2><h2 style="color: purple; margin-left: 5px;">8:00 a 12:00 / 17:00 a 21:00  </h2></div>
+    <br> <br><button type="submit" class="butonn finalizarr">finalizar compra</button></form></div>
+    </div>
+    </div></div>
+    
+
+ <br><br><br>
 </div><%- include("../partials/footer") %>
    </div>  <script src="/js/tarjeta.js"> </script>  </body> 
 </html>

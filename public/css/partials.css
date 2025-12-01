@@ -13,7 +13,7 @@
     position:fixed;
     width:100%;
     z-index: 10;
-}
+} 
 .fixed2{
     position: fixed;
     z-index: 10;
@@ -154,7 +154,7 @@
     padding-left: 3px;
     padding-right: 3px;
     position:absolute;
-    left: 45%;
+    left: 45%;/*algún día te centraré*/
 }
 .dospuntocinco{
     color: white;

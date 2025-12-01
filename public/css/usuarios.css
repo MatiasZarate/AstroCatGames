@@ -149,14 +149,21 @@ cursor: pointer;
 .errores{
     margin-left:170px;
 }
-.errores2{
-    margin-left:140px;
+.errores2 {
+   margin-left: 148px;
 }
-
+.errores3 ul{
+    list-style: none; /* 1. Quita las viñetas */
+    padding-left: 0;  /* 2. Quita el relleno izquierdo por defecto */
+    margin-left: 0;
+    width: 550px;
+}
 /*tarjetas*/
 .tarjetas{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+
 }
 .tarjeta{
     width: 120px;
@@ -207,4 +214,36 @@ cursor: pointer;
 }
 .finalizarr{
     margin-right: 150px;
+}
+.radioultimo{
+    margin-right: 5px;
+}
+.ultimoultimo{
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+}
+.ultimoultimoultimo{
+ margin-left: 30px;
+ margin-right: 30px;
+ display: flex;
+ flex-direction: row;
+}
+.envio{
+    display: flex;
+    flex-direction: column;
+}
+/*.losDosMetodos{
+
+}
+.metodoPago{
+ margin-left: 400px;
+ width: 800px;
+}*/
+.hdp{
+    display: flex;
+    flex-direction: row !important;
+}
+.yaMeQuieroIr{
+    margin-right: 153px;
 }
