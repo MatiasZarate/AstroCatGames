@@ -83,6 +83,7 @@ router.get("/usuarios/registro", homeController.registro);
 router.post("/usuarios/registro", upload.single('imagen'), validateRegister, homeController.postregistro);
 router.get("/usuarios/editar/:id", editar, homeController.editar);
 router.put("/usuarios/editar/:id", upload.single("imagen"), homeController.editar2);
+/*router.put('/toggleAdmin/:id', homeController.toggleAdmin);*/
 
 /*productos */
 router.get("/productos/creaProducto", admin, homeController.creaProducto);

@@ -486,7 +486,28 @@ const controlador = {
    finalizarCarrito: (req, res) => {
     req.session.carrito = []; /*vaciarlo */
     res.redirect("/")
-    }
+    },
+    /*toggleAdmin: (req, res) => {
+        const userId = req.params.id;
+        
+        db.Usuario.findByPk(userId)
+            .then(user => {
+                if (!user) {
+                    return res.status(404).send('Usuario no encontrado');
+                }
+
+                const nuevoAdminStatus = user.admin ? 0 : 1;
+
+                return user.update({ admin: nuevoAdminStatus })
+                    .then(() => {
+                        res.redirect(`/usuarios/perfil/${userId}`);
+                    });
+            })
+            .catch(error => {
+                console.error('Error al cambiar el estado de administrador:', error);
+                res.status(500).send('Error interno del servidor.');
+            });
+    }*/
 }
 
 

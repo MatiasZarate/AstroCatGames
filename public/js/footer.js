@@ -6,7 +6,7 @@ window.addEventListener("load", function(){
   quieneSomos.addEventListener("click", function(){
     Swal.fire({
   title: "Quienes somos?",
-  text: "Astro Cat Games es una tienda virtual del rubro de videojuegos en Argentina, donde podrás comprar todo tipo de productos de este rubro de una forma rápida y segura, llevando el producto a tu casa sin costo de envio. Al crear una cuenta y registrarte se te adquiere el permiso de vender tus propios productos a otros usuarios de la página, además de otras funcionalidades exclusivas",
+  text: "Astro Cat Games es un local de venta de videojuegos, ubicado en *, donde encontrarás todo tipo de productos del rubro gamer, de forma facil, rapida y segura. Puedes comprar como invitado, o como usuario, los cuales tienen ofertas exclusivas y otros beneficios. Puedes retirar tus compras del local, o también pedir a que se te envien a tu casa, sin costo de envio",
   imageUrl: "https://res.cloudinary.com/dduyxqrqt/image/upload/v1754835575/ce709d639337a5cb3d5e4da462e1d76f_nm3o5v.jpg",
   imageWidth: 400,
   imageHeight: 200,

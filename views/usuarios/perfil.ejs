@@ -15,7 +15,19 @@
 <!--toma los datos del usuario dado-->
         <h1 class="nombre"> <%= listado.nombre %></h1>
         <img class="fotoDePerfil" src="<%= listado.imagen %>">
-        <div class="botones"><button class="bonot editarBtn" data-id="<%= listado.id %>">editar</button> <form action="/usuarios/delete/<%= listado.id %>?_method=DELETE" method="POST"><button class="bonot">borrar</button></form></div><br>
+
+        <% if (userLogged && userLogged.admin) { %>
+         <div class="botones">
+            <% if(userLogged.id == listado.id){ %>
+            <button class="bonot editarBtn" data-id="<%= listado.id %>">editar</button> 
+            <% } else { %>
+            
+            <% } %>
+            <button class="bonot"> admin</button>
+            <form action="/usuarios/delete/<%= listado.id %>?_method=DELETE" method="POST"><button class="bonot">borrar</button></form></div><br>
+        <% } else { %>
+         <div class="botones"><button class="bonot editarBtn" data-id="<%= listado.id %>">editar</button> <form action="/usuarios/delete/<%= listado.id %>?_method=DELETE" method="POST"><button class="bonot">borrar</button></form></div><br>
+        <% } %>
         <div class="botones"><br><br>
         <h2 class="numero">email: <%= listado.email %></h2>
         <h2 class="numero">edad: <%= listado.edad %></h2><br>
